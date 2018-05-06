@@ -12,6 +12,7 @@
 		D86ED9202098D71C0096E332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86ED91E2098D71C0096E332 /* Main.storyboard */; };
 		D86ED9222098D71D0096E332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86ED9212098D71D0096E332 /* Assets.xcassets */; };
 		D86ED9252098D71D0096E332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86ED9232098D71D0096E332 /* LaunchScreen.storyboard */; };
+		D86ED92E2098D8320096E332 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86ED92D2098D8320096E332 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D86ED9212098D71D0096E332 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D86ED9242098D71D0096E332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D86ED9262098D71D0096E332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D86ED92D2098D8320096E332 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +58,21 @@
 			children = (
 				D86ED91A2098D71C0096E332 /* AppDelegate.swift */,
 				D86ED91C2098D71C0096E332 /* ViewController.swift */,
+				D86ED92D2098D8320096E332 /* CardView.swift */,
 				D86ED91E2098D71C0096E332 /* Main.storyboard */,
+				D86ED92C2098D7270096E332 /* Resources */,
+			);
+			path = InterviewQuestions;
+			sourceTree = "<group>";
+		};
+		D86ED92C2098D7270096E332 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				D86ED9212098D71D0096E332 /* Assets.xcassets */,
 				D86ED9232098D71D0096E332 /* LaunchScreen.storyboard */,
 				D86ED9262098D71D0096E332 /* Info.plist */,
 			);
-			path = InterviewQuestions;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D86ED91D2098D71C0096E332 /* ViewController.swift in Sources */,
+				D86ED92E2098D8320096E332 /* CardView.swift in Sources */,
 				D86ED91B2098D71C0096E332 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +294,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53BVAZ8K9G;
-				INFOPLIST_FILE = InterviewQuestions/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/InterviewQuestions/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53BVAZ8K9G;
-				INFOPLIST_FILE = InterviewQuestions/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/InterviewQuestions/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
