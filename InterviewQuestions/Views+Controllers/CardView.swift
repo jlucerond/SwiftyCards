@@ -13,7 +13,9 @@ class CardView: UIView {
    
    @IBInspectable var startColor: UIColor = UIColor.white
    @IBInspectable var endColor: UIColor = UIColor.green
-   private let topLayerGradient = CAGradientLayer()
+   
+   // MARK: - fixme
+   let topLayerGradient = CAGradientLayer()
    private let topicLabel = UILabel()
    private let questionLabel = UILabel()
    private let answerLabel = UILabel()
@@ -21,21 +23,21 @@ class CardView: UIView {
    
    private var frontOfCard: Bool = true
    
-   var currentTitle: String = "" {
+   var card: Card! {
       didSet {
          frontOfCard = true
          configure()
+         setNeedsLayout()
       }
    }
-   
-   // this function will check to see which side is showing, flip to the opposite side and decorate the view accordingly
+
    func flipCard() {
       frontOfCard = !frontOfCard
       updateText()
    }
    
    private func updateText() {
-      topicLabel.text = frontOfCard ? "front of card" : "back of card"
+      topicLabel.text = frontOfCard ? card.category : "Answer"
       questionLabel.isHidden = frontOfCard ? false : true
       answerLabel.isHidden = frontOfCard ? true : false
    }
@@ -48,35 +50,66 @@ class CardView: UIView {
    override func prepareForInterfaceBuilder() {
       super.prepareForInterfaceBuilder()
       setUp()
-      configure()
+      configureWithFakeDataForStoryboard()
+      layoutSubviews()
    }
    
    private func setUp() {
+      layer.addSublayer(topLayerGradient)
+      addSubview(topicLabel)
+      addSubview(questionLabel)
+      addSubview(answerLabel)
+      
       layer.borderWidth = 3.0
       layer.borderColor = UIColor.black.cgColor
       
-      layer.addSublayer(topLayerGradient)
       topicLabel.translatesAutoresizingMaskIntoConstraints = false
       questionLabel.translatesAutoresizingMaskIntoConstraints = false
       answerLabel.translatesAutoresizingMaskIntoConstraints = false
       
-      addSubview(topicLabel)
-      addSubview(questionLabel)
-      addSubview(answerLabel)
-   }
-   
-   private func configure() {
-      topLayerGradient.colors = [startColor.cgColor, endColor.cgColor]
+      
+      topicLabel.font = UIFont(name: "Marker Felt", size: 25.0)
+      topicLabel.adjustsFontSizeToFitWidth = true
+      topicLabel.minimumScaleFactor = 0.1
+      
       topLayerGradient.startPoint = CGPoint(x: 0.5, y: 0.25)
       topLayerGradient.endPoint = CGPoint(x: 0.5, y: 0.75)
       
-      topicLabel.text = currentTitle
-      topicLabel.font = UIFont(name: "Marker Felt", size: 25.0)
+      topicLabel.numberOfLines = 1
+      questionLabel.numberOfLines = 0
+      answerLabel.numberOfLines = 0
+   }
+   
+   private func configureWithFakeDataForStoryboard() {
+      topLayerGradient.colors = [startColor.cgColor, endColor.cgColor]
       
-      questionLabel.text = "This is the question"
-      answerLabel.text = "This is the answer"
+      topicLabel.text = "Topic Label that is super extra long"
       
+      questionLabel.isHidden = frontOfCard ? false : true
+      answerLabel.isHidden = frontOfCard ? true : false
+
+      questionLabel.text = "This is where the question will be"
+      answerLabel.text = "This is where the answer will be"
+      
+      topicLabel.numberOfLines = 1
+      questionLabel.numberOfLines = 0
+      answerLabel.numberOfLines = 0
+   }
+   
+   // make the call in a different place
+   
+   // add a timer
+   
+   private func configure() {
+      topLayerGradient.colors = [topGradientColor.cgColor, bottomGradientColor.cgColor]
+      
+      topicLabel.text = card.category
+      questionLabel.text = card.question
+      answerLabel.text = card.answer
+
       updateText()
+      layer.setNeedsLayout()
+      print("the layer needs to be laid out: \(layer.needsLayout())")
    }
    
    override func layoutSubviews() {
@@ -89,7 +122,8 @@ class CardView: UIView {
       self.clipsToBounds = true
       
       topicLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-      topicLabel.centerYAnchor.constraint(equalTo: self.topAnchor, constant: (topLayerGradient.bounds.height - topicLabel.bounds.height)).isActive = true
+      topicLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: (topLayerGradient.bounds.height - topicLabel.bounds.height)/2).isActive = true
+      topicLabel.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, multiplier: 0.9).isActive = true
       
       questionLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: topLayerGradient.bounds.height + 20).isActive = true
       questionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
@@ -100,6 +134,30 @@ class CardView: UIView {
       answerLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20).isActive = true
    }
    
+}
+
+private extension CardView {
+   var topGradientColor: UIColor {
+      switch card.category {
+      case "Beginner Swift":
+         return UIColor.blue
+      case "Intermediate Swift":
+         return UIColor.orange
+      default:
+         return startColor
+      }
+   }
+   
+   var bottomGradientColor: UIColor {
+      switch card.category {
+      case "Beginner Swift":
+         return UIColor.green
+      case "Intermediate Swift":
+         return UIColor.yellow
+      default:
+         return startColor
+      }
+   }
 }
 
 

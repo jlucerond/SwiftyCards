@@ -13,6 +13,11 @@
 		D86ED9222098D71D0096E332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86ED9212098D71D0096E332 /* Assets.xcassets */; };
 		D86ED9252098D71D0096E332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86ED9232098D71D0096E332 /* LaunchScreen.storyboard */; };
 		D86ED92E2098D8320096E332 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86ED92D2098D8320096E332 /* CardView.swift */; };
+		D8D2E730209F916000722B0B /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8D2E72E209F916000722B0B /* CardModel.xcdatamodeld */; };
+		D8D2E732209F916800722B0B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2E731209F916800722B0B /* CoreDataStack.swift */; };
+		D8D2E734209F947100722B0B /* CardModel+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2E733209F947100722B0B /* CardModel+Convenience.swift */; };
+		D8D2E736209F961600722B0B /* CardModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2E735209F961600722B0B /* CardModelController.swift */; };
+		D8D2E73A209F9ECD00722B0B /* SeedData.json in Resources */ = {isa = PBXBuildFile; fileRef = D8D2E739209F9ECD00722B0B /* SeedData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		D86ED9242098D71D0096E332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D86ED9262098D71D0096E332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86ED92D2098D8320096E332 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D8D2E72F209F916000722B0B /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
+		D8D2E731209F916800722B0B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D8D2E733209F947100722B0B /* CardModel+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardModel+Convenience.swift"; sourceTree = "<group>"; };
+		D8D2E735209F961600722B0B /* CardModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModelController.swift; sourceTree = "<group>"; };
+		D8D2E739209F9ECD00722B0B /* SeedData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SeedData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				D86ED91A2098D71C0096E332 /* AppDelegate.swift */,
-				D86ED91C2098D71C0096E332 /* ViewController.swift */,
-				D86ED92D2098D8320096E332 /* CardView.swift */,
-				D86ED91E2098D71C0096E332 /* Main.storyboard */,
+				D8A5ED3C209FCB0B000A5B1E /* Views+Controllers */,
+				D8A5ED3E209FCB26000A5B1E /* Model + Controller */,
+				D8A5ED3D209FCB1F000A5B1E /* Core Data */,
 				D86ED92C2098D7270096E332 /* Resources */,
 			);
 			path = InterviewQuestions;
@@ -71,8 +81,37 @@
 				D86ED9212098D71D0096E332 /* Assets.xcassets */,
 				D86ED9232098D71D0096E332 /* LaunchScreen.storyboard */,
 				D86ED9262098D71D0096E332 /* Info.plist */,
+				D8D2E739209F9ECD00722B0B /* SeedData.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8A5ED3C209FCB0B000A5B1E /* Views+Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D86ED91C2098D71C0096E332 /* ViewController.swift */,
+				D86ED91E2098D71C0096E332 /* Main.storyboard */,
+				D86ED92D2098D8320096E332 /* CardView.swift */,
+			);
+			path = "Views+Controllers";
+			sourceTree = "<group>";
+		};
+		D8A5ED3D209FCB1F000A5B1E /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				D8D2E731209F916800722B0B /* CoreDataStack.swift */,
+				D8D2E72E209F916000722B0B /* CardModel.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		D8A5ED3E209FCB26000A5B1E /* Model + Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8D2E735209F961600722B0B /* CardModelController.swift */,
+				D8D2E733209F947100722B0B /* CardModel+Convenience.swift */,
+			);
+			path = "Model + Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D2E73A209F9ECD00722B0B /* SeedData.json in Resources */,
 				D86ED9252098D71D0096E332 /* LaunchScreen.storyboard in Resources */,
 				D86ED9222098D71D0096E332 /* Assets.xcassets in Resources */,
 				D86ED9202098D71C0096E332 /* Main.storyboard in Resources */,
@@ -146,7 +186,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D2E732209F916800722B0B /* CoreDataStack.swift in Sources */,
+				D8D2E734209F947100722B0B /* CardModel+Convenience.swift in Sources */,
 				D86ED91D2098D71C0096E332 /* ViewController.swift in Sources */,
+				D8D2E730209F916000722B0B /* CardModel.xcdatamodeld in Sources */,
+				D8D2E736209F961600722B0B /* CardModelController.swift in Sources */,
 				D86ED92E2098D8320096E332 /* CardView.swift in Sources */,
 				D86ED91B2098D71C0096E332 /* AppDelegate.swift in Sources */,
 			);
@@ -346,6 +390,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8D2E72E209F916000722B0B /* CardModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8D2E72F209F916000722B0B /* CardModel.xcdatamodel */,
+			);
+			currentVersion = D8D2E72F209F916000722B0B /* CardModel.xcdatamodel */;
+			path = CardModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D86ED90F2098D71C0096E332 /* Project object */;
 }

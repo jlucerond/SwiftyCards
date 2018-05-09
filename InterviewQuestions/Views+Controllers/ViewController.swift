@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+   
    @IBOutlet weak var nextCard: CardView!
    @IBOutlet weak var topCard: CardView!
    @IBOutlet weak var topCardYConstraint: NSLayoutConstraint!
@@ -18,8 +18,8 @@ class ViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      nextCard.currentTitle = "second"
-      topCard.currentTitle = "first"
+      topCard.card = CardModelController.shared.cards[0]
+      nextCard.card = CardModelController.shared.cards[1]
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
       let centerX = cardView.center.x + usersFingerLocation.x
       let centerY = view.frame.midY + (0.5 * abs(offsetX))
       cardView.center = CGPoint(x:centerX,
-                            y:centerY)
+                                y:centerY)
       let angleToRotate = Measurement(value: (Double(percentSwiped * 10)), unit: UnitAngle.degrees)
       let radiansAngle = angleToRotate.converted(to: .radians).value
       cardView.transform = CGAffineTransform(rotationAngle: CGFloat(radiansAngle))
@@ -99,11 +99,9 @@ class ViewController: UIViewController {
       }
       
    }
-
+   
    @IBAction func userTappedOn(recognizer: UITapGestureRecognizer) {
       guard let cardView = recognizer.view as? CardView else { return }
-      
-      // here's where i'll make all of my changes to the card. make a function in cardView that does all of the work internally
       cardView.flipCard()
       
       UIView.transition(with: cardView, duration: 1.0, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
@@ -123,10 +121,10 @@ private extension ViewController {
          self.redX.center = CGPoint(x: (-0.5 * self.redX.bounds.width), y: self.view.center.y)
          self.greenCheck.alpha = 0
          self.greenCheck.center = CGPoint(x: self.view.bounds.width + (0.5 * self.greenCheck.bounds.width), y: self.view.center.y)
-
+         
       }, completion: nil)
    }
-
+   
    func swipeLeft(cardView: CardView) {
       UIView.animate(withDuration: 0.3, delay: 0, options: [.curveLinear], animations: {
          
@@ -136,22 +134,23 @@ private extension ViewController {
          let centerX = self.view.center.x - self.view.frame.width
          let centerY = self.view.center.y + 0.5 * self.view.frame.width
          cardView.center = CGPoint(x: centerX, y: centerY)
-
+         
          let angleToRotate = Measurement(value: -20, unit: UnitAngle.degrees)
          let radiansAngle = angleToRotate.converted(to: .radians).value
-
+         
          cardView.transform = CGAffineTransform(rotationAngle: CGFloat(radiansAngle))
       }) { (_) in
+         CardModelController.shared.userSaw(cardView.card, andGotCorrect: false)
          self.switchToNextCard()
       }
    }
-
+   
    func swipeRight(cardView: CardView) {
       UIView.animate(withDuration: 0.3, delay: 0, options: [.curveLinear], animations: {
          
          self.greenCheck.alpha = 0
          self.greenCheck.center = CGPoint(x: self.view.frame.midX, y: self.view.frame.midY)
-
+         
          let centerX = self.view.center.x + self.view.frame.width
          let centerY = self.view.center.y + 0.5 * self.view.frame.width
          cardView.center = CGPoint(x: centerX, y: centerY)
@@ -161,31 +160,36 @@ private extension ViewController {
          
          cardView.transform = CGAffineTransform(rotationAngle: CGFloat(radiansAngle))
       }) { (_) in
+         CardModelController.shared.userSaw(cardView.card, andGotCorrect: true)
          self.switchToNextCard()
       }
    }
    
    func switchToNextCard() {
-      topCard.currentTitle = nextCard.currentTitle
+      // update the top card to what the next card looks like
+      CATransaction.begin()
+      CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+      self.topCard.card = self.nextCard.card
+      topCard.layer.layoutSublayers()
       topCard.transform = .identity
       topCardYConstraint.constant = -20
-      view.layoutIfNeeded()
-      
+      CATransaction.commit()
+            
+      // animate the top card sliding down
       UIView.animate(withDuration: 0.3) {
          self.topCardYConstraint.constant = 0
          self.view.layoutIfNeeded()
       }
-      
-      let arrayOfTitles = ["a", "b", "c", "d", "e"]
-      let randomIndex = Int(arc4random_uniform(UInt32(arrayOfTitles.count)))
 
-      nextCard.currentTitle = arrayOfTitles[randomIndex]
-      
+      // get next card and place on bottom of screen
+      let randomIndex = Int(arc4random_uniform(UInt32(CardModelController.shared.cards.count)))
+      nextCard.card = CardModelController.shared.cards[randomIndex]
       
       greenCheck.alpha = 0
       greenCheck.center = CGPoint(x: (view.bounds.width + 0.5 * greenCheck.bounds.width), y: view.bounds.midY)
       redX.alpha = 0
       redX.center = CGPoint(x: (-0.5 * redX.bounds.width), y: view.bounds.midY)
    }
+   
    
 }
