@@ -18,6 +18,11 @@ class MainViewController: UIViewController {
    @IBOutlet weak var menuButton: UIButton!
    @IBOutlet weak var plusButton: UIButton!
    
+   lazy var animationController: AnimationController = {
+      return AnimationController()
+   }()
+   
+   // MARK: - LifeCycle Methods
    override func viewDidLoad() {
       super.viewDidLoad()
       let count = CardModelController.shared.cards.count
@@ -46,18 +51,8 @@ class MainViewController: UIViewController {
       }
    }
    
-   private func setUpButtons() {
-      menuButton.layer.cornerRadius = menuButton.bounds.height/2
-      plusButton.layer.cornerRadius = menuButton.bounds.height/2
-
-      menuButton.layer.shadowRadius = 5.0
-      plusButton.layer.shadowRadius = 5.0
-      menuButton.layer.shadowOpacity = 0.5
-      plusButton.layer.shadowOpacity = 0.5
-   }
-   
-   
-   @IBAction func userSwipedOn(recognizer: UIPanGestureRecognizer) {
+   // MARK: - IBActions
+   @IBAction func userSwipedOnCard(recognizer: UIPanGestureRecognizer) {
       let usersFingerLocation = recognizer.translation(in: self.view)
       guard let cardView = recognizer.view as? CardView else { return }
       
@@ -120,19 +115,48 @@ class MainViewController: UIViewController {
       
    }
    
-   @IBAction func userTappedOn(recognizer: UITapGestureRecognizer) {
+   @IBAction func userTappedOnCard(recognizer: UITapGestureRecognizer) {
       guard let cardView = recognizer.view as? CardView else { return }
       cardView.flipCard()
       
       UIView.transition(with: cardView, duration: 1.0, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
    }
    
-   @IBAction func unwindToMainVC(_ unwindSegue: UIStoryboardSegue) {
-      print("unwind")
+   @IBAction func goToMenuVC(recognizer: UITapGestureRecognizer) {
+      let button = recognizer.view as! SegueButton
+      animationController.buttonFrame = view.convert(button.bounds, from: button)
+      
+      let buttonGradient = button.backgroundGradientLayer
+      let gradient = CAGradientLayer()
+      gradient.colors = buttonGradient.colors
+      gradient.startPoint = buttonGradient.startPoint
+      gradient.endPoint = buttonGradient.endPoint
+      
+      let menuVC = storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+      menuVC.backgroundGradientLayer = gradient
+      menuVC.transitioningDelegate = self
+      present(menuVC, animated: true, completion: nil)
+   }
+   
+   @IBAction func goToAddCardVC(recognizer: UITapGestureRecognizer) {
+      let button = recognizer.view as! SegueButton
+      animationController.buttonFrame = view.convert(button.bounds, from: button)
+      
+      let buttonGradient = button.backgroundGradientLayer
+      let gradient = CAGradientLayer()
+      gradient.colors = buttonGradient.colors
+      gradient.startPoint = buttonGradient.startPoint
+      gradient.endPoint = buttonGradient.endPoint
+      
+      let addCarVC = storyboard!.instantiateViewController(withIdentifier: "AddCardViewController") as! AddCardViewController
+      addCarVC.backgroundGradientLayer = gradient
+      addCarVC.transitioningDelegate = self
+      present(addCarVC, animated: true, completion: nil)
    }
    
 }
 
+// MARK: - Helper Methods
 private extension MainViewController {
    func returnToCenter(cardView: CardView) {
       UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
@@ -215,6 +239,22 @@ private extension MainViewController {
       redX.center = CGPoint(x: (-0.5 * redX.bounds.width), y: view.bounds.midY)
    }
    
+   func setUpButtons() {
+      
+   }
    
+}
+
+// MARK: - Transition
+extension MainViewController: UIViewControllerTransitioningDelegate {
+   func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+      animationController.isPresenting = true
+      return animationController
+   }
+   
+   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+      animationController.isPresenting = false
+      return animationController
+   }
 }
 

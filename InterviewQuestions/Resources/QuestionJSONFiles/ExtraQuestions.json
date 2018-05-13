@@ -33,22 +33,22 @@
  
  {
  "category" : "Beginner Swift",
- "question" : "How would you declare a function that has a parameter of an array of strings and returns a integer?",
+ "question" : "How would you declare a function that has a parameter of an array of strings and returns an integer?",
  "answer" : "",
- "answerCode" : "func foo(array: [String]) -> Int {\n  // do something\n  // return an integer\n}"
+ "answerCode" : "func myFunc(array: [String]) -> Int {\n  // do something\n  // return an integer\n}"
  },
  
  
  {
  "category" : "Beginner Swift",
  "question" : "What is a wildcard symbol used for?",
- "answer" : "A wildcard or _ is used to signify that the something is not going to be used. It is probably most commonly used to skip the external parameter name in a function.",
+ "answer" : "A wildcard or _ is used to signify that the variable or constant that it is replacing is not needed. It is commonly used to skip the external parameter name in a function.",
  "answerCode" : "for _ in 1...5 {\n   print('test')\n}\n// prints 'test' five times\n\nfunc noExtPar(_ num: Int) {\n}\nnoExtPar(3)"
  },
  
  
  {
- "category" : "CategoryGoesHere",
+ "category" : "Advanced Swift",
  "question" : "QuestionGoesHere",
  "questionCode" : "QuestionCodeGoesHere",
  "answer" : "AnswerGoesHere",

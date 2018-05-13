@@ -59,6 +59,7 @@ class CodeView: UIView {
       codeTextLabel.backgroundColor = customBackgroundColor
       codeTextLabel.textColor = customCodeColor
       codeTextLabel.numberOfLines = 0
+      codeTextLabel.lineBreakMode = .byWordWrapping
       codeTextLabel.adjustsFontSizeToFitWidth = true
       codeTextLabel.minimumScaleFactor = 0.1
       codeTextLabel.text = "test\n\nquestion"
@@ -72,10 +73,6 @@ class CodeView: UIView {
    // Configure (every time codeText gets updated)
    private func configure() {
       codeTextLabel.text = codeText
-   }
-   
-   override func layoutSubviews() {
-      super.layoutSubviews()
    }
    
 }

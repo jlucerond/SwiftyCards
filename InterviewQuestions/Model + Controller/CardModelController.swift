@@ -52,7 +52,6 @@ class CardModelController {
       self.cards = loadCards()
       timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (_) in
          self.timePassed += 1
-         print(self.timePassed)
       })
    }
    
