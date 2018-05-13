@@ -1,0 +1,16 @@
+ [
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "beginnerQuestion1",
+  "answer" : "answer1"
+  },
+  
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "QuestionGoesHere",
+  "answer" : "AnswerGoesHere"
+  }
+  
+  ]

@@ -1,0 +1,17 @@
+[
+ 
+ {
+ "category" : "Programming Theory",
+ "question" : "What is pseudo-code?",
+ "answer" : "Pseudo-code isn't valid computer code but instead is 'human-readable code' used to help developers sort out the steps that they'll need to do in order to make a program work. For example:",
+ "answerCode" : "1) Make or reuse a cell.\n\n2) Find the item that should be displayed in the cell.\n\n3) Update the cell to display those properties.\n\n4) Return the cell."
+ },
+ 
+ 
+ {
+ "category" : "Programming Theory",
+ "question" : "QuestionGoesHere",
+ "answer" : "AnswerGoesHere"
+ }
+ 
+ ]

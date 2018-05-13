@@ -11,12 +11,16 @@ import CoreData
 
 extension Card {
    convenience init(question: String,
-        answer: String,
-        category: String) {
+                    questionCode: String,
+                    answer: String,
+                    answerCode: String,
+                    category: String) {
       
       self.init(context: CoreDataStack.context)
       self.question = question
+      self.questionCode = questionCode
       self.answer = answer
+      self.answerCode = answerCode
       self.category = category
    }
    

@@ -1,0 +1,87 @@
+ [
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is the modulo operator and what does it do?",
+  "answer" : "The modulo operator (%) allows you to find the remainder in division. It is commonly used to find whether a number evenly divides into another number.",
+  "answerCode" : "13 % 5 == 3\n\n// Thirteen divided by five has a 'leftover' of 3."
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What are the two ways to add comments to your code?",
+  "answer" : "A single line can be commented out with two / symbols. Multiple lines can be commented out by surrounding the code with /* and */ symbols.",
+  "answerCode" : "// one line commented out\n\n/*\nAll of this\nwill be\ncommented out.\n*/"
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is the difference between a constant and a variable and how do you declare each?",
+  "answer" : "Unlike a variable, once you've declared a constant, you are not able to change its data.",
+  "answerCode" : "let myConstant = \"my initial value\"\nmyConstant = \"you can't redeclare this\"(ERROR)\n\nvar myVariable = \"my initial value\"\nmyVariable = \"you CAN redeclare this\""
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is string interpolation?",
+  "answer" : "String interpolation allows you to make a string by replacing what is inside of the \\() with the contents inside of the \\()",
+  "answerCode" : "let name = \"Joe\"\nlet age = 34\nlet message = \"Hello my name is \\(name) and I am \\(age) years old!\"\n\nprint(message)\nPrints: Hello my name is Joe and I am 34 years old!"
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is a tuple?",
+  "answer" : "A tuple is a type that represents data composed of multiple parts.",
+  "answerCode" : "let coordinates: (Int, Int) = (x: 3, y: 5)\nlet xValue = coordinates.x\n\n\n// xValue is equal to 3."
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What are the 6 comparison operators and what does each one return?",
+  "answer" : "Each of the comparison operators returns a BOOL:\n\nEqual: ==\nNot Equal: !=\nGreater Than: >\nGreater Than or Equal To: >=\nLess Than: <\nLess Than or Equal To: <="
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What's the problem with the following code?",
+  "questionCode" : "let age = 13\n\nif age >= 21 {\n  let canDrink = true\n} else {\n  let canDrink = false\n}\n\nprint(\"Someone who is \\(age) can drink alcohol: \\(canDrink))",
+  "answer" : "Scope. The scope of the constant canDrink expires after the } symbol and therefore can't be used in the print statement."
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is the purpose of optionals in Swift?",
+  "answer" : "Optionals solve the problem in other computer languages of sentinal values. Imagine a program that asks for but does not require a user's age. If a user does not input an age, in other computer languages, it might default to a number, such as zero. But this would be the same age of a newborn. Optionals allow your program to be explict about whether a certain value is known or not."
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is nil coalescing?",
+  "answer" : "Nil coalescing (??) allows you to check if an optional value exists and, if not, choose another (often default) value.",
+  "answerCode" : "var optionalNumber: Int? = nil\nlet unwrappedNumber = optionalNumber ?? 0\n\n/*Unwrapped number will be equal to optionalNumber if optionalNumber is non-nil. Otherwise, it will be equal to zero. In this case, optionalNumber equals 0.*/"
+  },
+
+  {
+  "category" : "Beginner Swift",
+  "question" : "In each of the following statements, what would the value be?",
+  "questionCode" : "1) let value = true && false\n\n2) let value = false || 3 > 1\n\n3) let value = ((10 % 2) == 0) && (false == 3 < 1)",
+  "answer" : "1) FALSE\n\n2) TRUE\n\n3) TRUE"
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is the difference between using 'break', 'continue', and 'return' inside the body of a for loop or a while loop?",
+  "answer" : "Break will cause the loop to end. Continue will skip that iteration of the loop. Return (not technically part of a for loop or while loop) will stop the function from running."
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What will the following function return?",
+  "questionCode" : "func foo() -> Int {\n  var value = 0\n  for num in 1...100 {\n    if num % 2 == 0 {\n      value += num\n      continue\n    } else if num % 5 == 0 {\n      break\n    }\n  }\n  return value\n  }\nfoo()",
+  "answer" : "Six. The loop will skip 1, add 2, skip 3, add 4, and break out of the loop when it gets to 5."
+  }
+  
+  
+  ]
+
+

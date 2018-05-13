@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  InterviewQuestions
 //
 //  Created by Joe Lucero on 5/1/18.
@@ -8,18 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
    
    @IBOutlet weak var nextCard: CardView!
    @IBOutlet weak var topCard: CardView!
    @IBOutlet weak var topCardYConstraint: NSLayoutConstraint!
    @IBOutlet weak var greenCheck: UIImageView!
    @IBOutlet weak var redX: UIImageView!
+   @IBOutlet weak var menuButton: UIButton!
+   @IBOutlet weak var plusButton: UIButton!
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      topCard.card = CardModelController.shared.cards[0]
+      let count = CardModelController.shared.cards.count
+      topCard.card = CardModelController.shared.cards[count - 2]
       nextCard.card = CardModelController.shared.cards[1]
+      setUpButtons()
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -31,9 +35,25 @@ class ViewController: UIViewController {
       super.viewDidAppear(animated)
       self.topCardYConstraint.constant = 0
       
+      
+      nextCard.layer.masksToBounds = false
+      nextCard.layer.shadowColor = UIColor.black.cgColor
+      nextCard.layer.shadowRadius = 5.0
+      nextCard.layer.shadowOpacity = 0.5
+      
       UIView.animate(withDuration: 1.0) {
          self.view.layoutIfNeeded()
       }
+   }
+   
+   private func setUpButtons() {
+      menuButton.layer.cornerRadius = menuButton.bounds.height/2
+      plusButton.layer.cornerRadius = menuButton.bounds.height/2
+
+      menuButton.layer.shadowRadius = 5.0
+      plusButton.layer.shadowRadius = 5.0
+      menuButton.layer.shadowOpacity = 0.5
+      plusButton.layer.shadowOpacity = 0.5
    }
    
    
@@ -107,9 +127,13 @@ class ViewController: UIViewController {
       UIView.transition(with: cardView, duration: 1.0, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
    }
    
+   @IBAction func unwindToMainVC(_ unwindSegue: UIStoryboardSegue) {
+      print("unwind")
+   }
+   
 }
 
-private extension ViewController {
+private extension MainViewController {
    func returnToCenter(cardView: CardView) {
       UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
          let centerX = self.view.frame.midX
@@ -193,3 +217,4 @@ private extension ViewController {
    
    
 }
+

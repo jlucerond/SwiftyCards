@@ -10,6 +10,27 @@ import Foundation
 import CoreData
 
 class CardModelController {
+   
+   enum CardPack: String {
+      case programmingTheory = "ProgrammingTheory"
+      case beginnerSwift = "BeginnerSwift"
+      case intermediateSwift = "IntermediateSwift"
+      case extraQuestions = "ExtraQuestions"
+//      case AdvancedSwift
+//      case CoreData
+//      case Networking
+//      case CloudKit
+//      case BeginnerObjC
+//      case IntermediateObjC
+//      case AdvancedObjC
+//      case AutoLayout
+//      case MapKit
+//      case Animations
+//      case DataStructures
+//      case DesignPatterns
+//      case WatchOS
+   }
+   
    static let shared = CardModelController()
    private(set) var cards: [Card] = []
    private var timePassed = 0
@@ -52,7 +73,13 @@ class CardModelController {
       if numberOfObjects == 0 {
          // loading things for the first time
          print("loading things the first time (create)")
-         return loadCardsFromPList()
+//         let programmingTheoryCards = loadCardsFromJSON(cardPack: .programmingTheory)
+//         let beginnerSwiftCards = loadCardsFromJSON(cardPack: .beginnerSwift)
+//         let intermediateSwiftCards = loadCardsFromJSON(cardPack: .intermediateSwift)
+         let newQ = loadCardsFromJSON(cardPack: .extraQuestions)
+         
+         // FIXME: - Set this back to 3 decks before publishing
+         return newQ
       } else {
          print("loading things from Core Data (find)")
          do {
@@ -64,8 +91,9 @@ class CardModelController {
       }
    }
    
-   private func loadCardsFromPList() -> [Card] {
-      let jsonURL = Bundle.main.url(forResource: "SeedData", withExtension: "json")!
+   private func loadCardsFromJSON(cardPack: CardModelController.CardPack) -> [Card] {
+      print(cardPack.rawValue)
+      let jsonURL = Bundle.main.url(forResource: cardPack.rawValue, withExtension: "json")!
       let jsonData = try! Data.init(contentsOf: jsonURL)
       
       let arrayOfDictionaries = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [[String:Any]]
@@ -73,11 +101,12 @@ class CardModelController {
       var arrayOfCards: [Card] = []
       for dictionary in arrayOfDictionaries {
          let question = dictionary["question"] as! String
+         let questionCode = (dictionary["questionCode"] as? String) ?? ""
          let answer = dictionary["answer"] as! String
+         let answerCode = (dictionary["answerCode"] as? String) ?? ""
          let category = dictionary["category"] as! String
          
-         
-         let newCard = Card(question: question, answer: answer, category: category)
+         let newCard = Card(question: question, questionCode: questionCode, answer: answer, answerCode: answerCode, category: category)
          print("added a new card")
          arrayOfCards.append(newCard)
       }

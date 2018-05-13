@@ -1,0 +1,73 @@
+[
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What is the purpose of a switch statement?",
+ "answer" : "A switch statement is often a “cleaner” way to analyze multiple if/else if statements.",
+ "answerCode" : "let num = 10\n\nswitch num {\ncase 0:\n   print('zero')\ncase 1...5:\n   print('one through five')\ndefault:\n   print('negative or larger than five')\n}\n\n// would print “negative or larger than five”"
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What would the following code do?",
+ "questionCode" : "let coordinate = (x: 1, y: 5)\n\nswitch coordinate {\ncase (0, 0):\n   print('Origin')\ncase (1, _):\n   print('x equals 1')\ncase (_, 5):\n   print('y equals 5')\ndefault:\n   print('none of the above')\n}",
+ "answer" : "print: x equals 1\n\nAlthough two of the cases are true, a switch statement only performs the first case that is true."
+ },
+ 
+ 
+ {
+ "category" : "Beginner Swift",
+ "question" : "What is an example of a closed range? A half-open range?",
+ "answer" : "A closed range includes both the start and end value. A half-open range includes the start value and up to, but not including, the end value.",
+ "answerCode" : "let rangeA = 1...10\nlet rangeB = 11..<20\n\n// rangeA contains 10 numbers\n// rangeB contains 9 numbers"
+ },
+ 
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What is the minimum number of values inside of a closed range? A half-open range?",
+ "answer" : "A closed range must have at least one value inside. A half-open range can have zero values inside. This may influence which one you should choose to use in a for loop.",
+ "answerCode" : "let rangeA = 1...1\nlet rangeB = 1..<1\n\nprint(rangeA.count)\n// prints 1\n\nprint(rangeB.count)\n// prints 0"
+ },
+ 
+ 
+ {
+ "category" : "Beginner Swift",
+ "question" : "How would you declare a function that has a parameter of an array of strings and returns a integer?",
+ "answer" : "",
+ "answerCode" : "func foo(array: [String]) -> Int {\n  // do something\n  // return an integer\n}"
+ },
+ 
+ 
+ {
+ "category" : "Beginner Swift",
+ "question" : "What is a wildcard symbol used for?",
+ "answer" : "A wildcard or _ is used to signify that the something is not going to be used. It is probably most commonly used to skip the external parameter name in a function.",
+ "answerCode" : "for _ in 1...5 {\n   print('test')\n}\n// prints 'test' five times\n\nfunc noExtPar(_ num: Int) {\n}\nnoExtPar(3)"
+ },
+ 
+ 
+ {
+ "category" : "CategoryGoesHere",
+ "question" : "QuestionGoesHere",
+ "questionCode" : "QuestionCodeGoesHere",
+ "answer" : "AnswerGoesHere",
+ "answerCode" : "AnswerCodeGoesHere"
+ }
+ 
+ ]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
