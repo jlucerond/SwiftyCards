@@ -48,11 +48,228 @@
  
  
  {
+ "category" : "Intermediate Swift",
+ "question" : "What is the difference between a parameter and an argument?",
+ "answer" : "A function declares its parameters in a parameter list and are used inside of the function. When you call a function, the values that are passed in are the arguments for the function’s parameters.",
+ "answerCode" : "func myFunc(parameter: String){\n}\n\nmyFunc(parameter: 'argument')"
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "How do you add default values to a function’s parameters?",
+ "answer" : "By putting an equal sign after the parameter type. This will allow you to call the function with or without an argument for that parameter.",
+ "answerCode" : "func myFunc(par: Int = 5){\n   print(par)\n}\n\nmyFunc()\n// prints 5\nmyFunc(par: 7)\n// prints 7"
+ },
+ 
+ {
  "category" : "Advanced Swift",
- "question" : "QuestionGoesHere",
- "questionCode" : "QuestionCodeGoesHere",
- "answer" : "AnswerGoesHere",
- "answerCode" : "AnswerCodeGoesHere"
+ "question" : "What’s the problem with this code?",
+ "questionCode" : "func addOneTo(_ value: Int) -> Int {\n   value += 1\n   return value\n}\n\naddOneTo(10)",
+ "answer" : "Parameters passed into a function are by default pass-by-value. Usually a function should not change the item that was passed in. If you do want to modify value directly, you can do copy-in copy-out, but that requires a & before the value passed in.",
+ "answerCode" : "func addOneTo(_ value: inout Int) -> Int {\n   value += 1\n   return value\n}\nvar myNum = 10\naddOneTo(&myNum)\nprint(myNum)\n// prints 11"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is overloading?",
+ "answer" : "Overloading is declaring the same function with different numbers of parameters, parameter types, or external parameter names to group similar functionality.",
+ "answerCode" : "func addOneTo(_ num: Int) -> Int {\n   return num + 1\n}\n\nfunc addOneTo(_ dec: Double) -> Double {\n   return dec + 1\n}\n\naddOneTo(3)\naddOneTo(3.5)"
+ },
+ 
+ {
+ "category" : "Beginner Swift",
+ "question" : "Where is a function’s return type declared?",
+ "answer" : "After the -> symbol. If a -> symbol is not used, then the function returns Void.",
+ "answerCode" : "func sayHi() {\n   print('Hi')\n}\n\nfunc sayHi() -> Void {\n   print('Hi')\n}"
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "How would you write the FizzBuzz function? Print numbers from 1 to 100, replacing multiples of 3 with 'Fizz', multiples of 5 with 'Buzz' and multiples of both 3 and 5 with 'FizzBuzz'?",
+ "answer" : "There’s lots of valid solutions to the problem. Here’s one:",
+ "answerCode" : "func fizzBuzz() {\n   for i in 1...100{\n      if i % 15 == 0 {\n         print('FizzBuzz')\n      } else if i % 3 == 0 {\n         print('Fizz')\n      } else if i % 5 == 0 {\n         print('Buzz')\n      } else {\n         print(i)\n      }\n   }\n}\n\nfizzBuzz()"
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What is a recursive function and what must you be careful of when using one?",
+ "answer" : "A recursive function is a function that calls itself. However, if a function calls itself, you need to be sure that there is a way to exit the function, otherwise you will enter an infinite loop.",
+ "answerCode" : "func recursive() {\n   recursive()\n}\n// infinite loop!"
+ },
+ 
+ {
+ "category" : "Beginner Swift",
+ "question" : "What is the type of the constant ‘myNum’?",
+ "questionCode" : "let myNum = Int(\"1\")",
+ "answer" : "myNum is an optional Int. It is optional because Int has an initializer that takes in a string, but because the string could contain non-digits characters, it is possible that the initializer will fail."
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What are a few ways to unwrap optionals?",
+ "answer" : "Force unwrapping, optional binding, and guard statements.",
+ "answerCode" : "var opt: Int?\n\n// force unwrapping\nprint(opt!)\n\n// optional binding\nif let def = opt {\n   print(def)\n}\n\n// guard statement\nguard let def = opt else { return }"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What data type is an optional and how does it work?",
+ "answer" : "An optional is an enumeration with two cases: .none and .some with the .some having an associated value attached to it. Behind the scenes, an enumeration would look something like:",
+ "answerCode" : "enum myOptional {\n   case none\n   case something(item: <T>)\n} "
+ },
+ 
+ {
+ "category" : "General Programming",
+ "question" : "What is big-O notation?",
+ "answer" : "Big-O notation is used to describe how long an operation takes to complete. A few examples:\n\nO(1) describes a function that will take the same time no matter how big the data set is. \n\nO(N) describes a function that will grow linearly with how large the data set is. \n\nO(N^2) describes a function that will grow exponentially with how large the data set is."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "How long would each of the following functions take in terms of big-O notation?",
+ "questionCode" : "1) myArray.index(of: 2)\n2) myArray.first \n3) func fib(_ num: Int) -> Int {\n   if num == 1 || num == 2 {\n      return 1\n   } else {\n      return fib(num - 1) + fib(num - 2)\n   }\n}\n4) for num in myArray {\n   for num2 in myArray {\n      print(num * num2)\n   }\n}",
+ "answer" : "1) O(n)\n2) O(1)\n3) O(2^n)\n4) O(n^2)"
+ },
+ 
+ {
+ "category" : "Beginner Swift",
+ "question" : "What’s the problem with this code?",
+ "questionCode" : "let num = [1, 2, 3, 4, 5]\n\nlet lastNum = num[5]",
+ "answer" : "Since arrays are zero-indexed, the first number in the array is at index zero and the last number in the array is at index (count - 1). Therefore the code goes beyond the last index and will crash."
+ },
+ 
+ {
+ "category" : "Beginner Swift",
+ "question" : "What is the type of firstNum?",
+ "questionCode" : "let num = [1, 2, 3, 4, 5]\n\nlet firstNum = num.first",
+ "answer" : "Optional Int or Optional(1). The property first returns the first element in an array, but since arrays can be empty, it is wrapped in an optional."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is a variadic parameter and what kind of limits are there on using them?",
+ "answer" : "A variadic parameter is used to pass a variable number of parameters into a function. There can only be one variadic parameter and it must be the final parameter in a function.",
+ "answerCode" : "func add(_ nums: Int...){\n   var sum = 0\n   for num in nums {\n      sum += num\n   }\n   print(sum)\n}\n\nadd(3, 4, 5)"
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What is the difference between looping through an array and looping through a dictionary?",
+ "answer" : "Looping through an array will give each item in the array. Looping through a dictionary will give a tuple containing the key and value of each item in the dictionary."
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What is subscripting and what data types support it?",
+ "answer" : "Subscripts enable you to query instances of a type by writing one or more values in square brackets after the instance name. Classes, structs, and enums can all use subscripts. The two most common uses of subscripts are with arrays and dictionaries."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is hashable and where is it most commonly used?",
+ "answer" : "Hashable is a protocol in Swift that takes a type and provides an integer hash value. Many types in the standard library are already hashable (strings, integers, etc.). It is required of all keys in dictionaries, but is also used to distinguish items in sets."
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What would each of the following statements return?",
+ "questionCode" : "let dict = ['a' : 1, 'b' : 2, 'c' : 3]\n\n1) dict['a']\n2) dict[1]\n3) dict.first\n4) dict.isEmpty",
+ "answer" : "1) 1\n\n2) // ERROR\n\n3) Unknown. Swift dictionaries are not guaranteed to be in any specific order. On my computer, first returned (key 'b', value 2)\n\n4) false"
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What is a closure?",
+ "answer" : "Closures are functions without a name that can be passed as variables. Closures in Swift are similar to blocks in Objective-C."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "How could one simplify this closure?",
+ "questionCode" : "let add: (Int, Int) -> Int = { (a: Int, b: Int) -> Int in\n   return a + b\n}",
+ "answer" : "Closure syntax can be simplified by removing the parameter types, return type, and, when just a single line, the return keyword.",
+ "answerCode" : "let add: (Int, Int) -> Int = {\n   $0 + $1\n}\n\nadd(2, 3)"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is the definition of a higher-order function?",
+ "answer" : "A higher-order function is a function that takes one or more functions as arguments or returns a function as its result."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What are the four common higher-order Swift functions and what do they each do?",
+ "answer" : "Each of the following higher-order functions takes a collection and\n1) filter- returns an array containing, in order, the elements of the sequence that satisfy the given predicate.\n2) reduce- returns the result of combining the elements of the sequence using the given closure.\n3) map- Returns an array containing the results of mapping the given closure over the sequence’s elements.\n4) compactMap- Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+ },
+ 
+ {
+ "category" : "General Programming",
+ "question" : "What is the definition of syntactic sugar?",
+ "answer" : "Syntactic sugar is syntax within a programming language that is designed to make things easier to read or to express. It makes the language 'sweeter' for human use: things can be expressed more clearly, more concisely, or in an alternative style that some may prefer."
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What are the names of the four kinds of named types in Swift?",
+ "answer" : "Structures (structs), classes, enumerations (enums), and protocols."
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What are the differences between structs and classes?",
+ "answer" : "Probably the most significant difference between the two is that structs are value-based and classes are reference-based. Structs also get a pre-made initializer with all  In addition, classes have the following abilities, while structs do not:\n- Inheritance enables one class to inherit the characteristics of another.\n- Type casting enables you to check and interpret the type of a class instance at runtime.\n- Deinitializers enable an instance of a class to free up any resources it has assigned.\n- Reference counting allows more than one reference to a class instance."
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What is the problem with the following code?",
+ "questionCode" : "class Person {\n   var name: String\n   var age: Int\n}\n\nPerson(name: 'Aaron', age: 34)",
+ "answer" : "Because classes do not get pre-made initializers and the properties do not have default values, the code will not compile until an initializer gets added or Person changes from a class to a struct."
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What's the difference between a function and a method in Swift? A constant/variable and a property?",
+ "answer" : "A method is a function that is inside of a type (class, struct, protocol). A property is a constant or variable that is inside of a type."
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What are the advantages and disadvantages of using classes vs reference?",
+ "answer" : "There are many reasons why you want to choose one type or the other (or a combination of both), but because structs are value types, they work on the stack and have the advantages of speed and changes to one struct not affecting a copy of that struct. If you are making items that represent unique objects and want a change in one area to alter other areas in your code, you might prefer classes. (My $0.02: start with structs and change to classes when needed)"
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "Which of the following would be better represented by a class? A struct?\n\n1) A person\n\n2) A person's name\n\n3) A peron's address\n\n4) A person's book",
+ "answer" : "1) Class\n\n2) Struct\n\n3) Struct\n\n4) It depends! We might say 'I have the same book as you', but unless you went 50/50 with a friend you don't technically own the same book\n\n"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is the type of each of the following Swift Standard Library, Foundation, or UIKit items?\n\n1) UIImage\n2) String\n3) Array\n4) Optional\n5) Error\n6) TimeInterval",
+ "answer" : "Answers:\n\n1) Class\n2) Struct\n3) Struct\n4) Enum\n5) Protocol\n6) Type Alias"
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What are the two kinds of properties?\n\nHint: some properties have { } after the declaration and some don't.",
+ "answer" : "Stored properties and computed properties.",
+ "answerCode" : "// stored properties\nvar birthYear = 1999\nvar year = 2018\n\n// computed property\nvar age: Int {\n   return year - birthYear\n}"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "How does one make a computed property into a read-write computed property?",
+ "answer" : "By including both a getter and setter in the curly braces and (usually) using the newValue to set some other stored property.",
+ "answerCode" : "var birthYear = 1999\nvar year = 2018\n\nvar age: Int {\n   get {\n      return year - birthYear\n   }\n   \n   set {\n      birthYear = year - newValue\n   }\n}"
+ },
+ 
+ {
+ "category" : "Intermediate Swift",
+ "question" : "What is a type property?",
+ "answer" : "Often called a class property or static property, these are properties that are not called on an instance of a class, but the class itself. One example is Double.pi, which is a value not associated with a specific double. It wouldn't make sense to say that 1.5 should have a property called pi, but it does make sense that pi is associated with the type Double."
  }
  
  ]

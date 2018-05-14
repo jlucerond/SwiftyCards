@@ -72,13 +72,13 @@ class CardModelController {
       if numberOfObjects == 0 {
          // loading things for the first time
          print("loading things the first time (create)")
-//         let programmingTheoryCards = loadCardsFromJSON(cardPack: .programmingTheory)
-//         let beginnerSwiftCards = loadCardsFromJSON(cardPack: .beginnerSwift)
-//         let intermediateSwiftCards = loadCardsFromJSON(cardPack: .intermediateSwift)
+         let programmingTheoryCards = loadCardsFromJSON(cardPack: .programmingTheory)
+         let beginnerSwiftCards = loadCardsFromJSON(cardPack: .beginnerSwift)
+         let intermediateSwiftCards = loadCardsFromJSON(cardPack: .intermediateSwift)
          let newQ = loadCardsFromJSON(cardPack: .extraQuestions)
          
          // FIXME: - Set this back to 3 decks before publishing
-         return newQ
+         return programmingTheoryCards + beginnerSwiftCards + intermediateSwiftCards + newQ
       } else {
          print("loading things from Core Data (find)")
          do {

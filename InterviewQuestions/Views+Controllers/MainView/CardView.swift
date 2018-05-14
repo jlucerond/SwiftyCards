@@ -24,11 +24,11 @@ class CardView: UIView {
    private let spacingConstant: CGFloat = 20.0
    private let borderWidth: CGFloat = 3.0
    private let borderColor: UIColor = UIColor.black
-   private var frontOfCard: Bool = true
+   private(set) var isFrontOfCard: Bool = true
    
    var card: Card! {
       didSet {
-         frontOfCard = true
+         isFrontOfCard = true
          configure()
       }
    }
@@ -83,10 +83,10 @@ class CardView: UIView {
    private func configureWithFakeDataForStoryboard() {
       topLayerGradient.colors = [startColor.cgColor, endColor.cgColor]
       
-      questionLabel.isHidden = frontOfCard ? false : true
-      questionCodeView.isHidden = frontOfCard ? false : true
-      answerLabel.isHidden = frontOfCard ? true : false
-      answerCodeView.isHidden = frontOfCard ? true : false
+      questionLabel.isHidden = isFrontOfCard ? false : true
+      questionCodeView.isHidden = isFrontOfCard ? false : true
+      answerLabel.isHidden = isFrontOfCard ? true : false
+      answerCodeView.isHidden = isFrontOfCard ? true : false
 
       topicLabel.text = "Topic Label that is super extra long"
       questionLabel.text = "This is where the question will be"
@@ -147,16 +147,16 @@ class CardView: UIView {
    
    // Helper Methods
    func flipCard() {
-      frontOfCard = !frontOfCard
+      isFrontOfCard = !isFrontOfCard
       showOrHideText()
    }
    
    private func showOrHideText() {
-      topicLabel.text = frontOfCard ? card.category : "Answer"
-      questionLabel.isHidden = frontOfCard ? false : true
-      questionCodeView.isHidden = (frontOfCard && !questionCodeView.codeText.isEmpty) ? false : true
-      answerLabel.isHidden = !frontOfCard ? false : true
-      answerCodeView.isHidden = (!frontOfCard && !answerCodeView.codeText.isEmpty) ? false : true
+      topicLabel.text = isFrontOfCard ? card.category : "Answer"
+      questionLabel.isHidden = isFrontOfCard ? false : true
+      questionCodeView.isHidden = (isFrontOfCard && !questionCodeView.codeText.isEmpty) ? false : true
+      answerLabel.isHidden = !isFrontOfCard ? false : true
+      answerCodeView.isHidden = (!isFrontOfCard && !answerCodeView.codeText.isEmpty) ? false : true
    }
    
 }

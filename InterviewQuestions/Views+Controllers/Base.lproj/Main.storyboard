@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="InterviewQuestions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="wZ2-Jk-GfW">
-                                <rect key="frame" x="85" y="503" width="150" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="wZ2-Jk-GfW">
+                                <rect key="frame" x="87.5" y="602" width="200" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1U-3b-tK6" customClass="SegueButton" customModule="InterviewQuestions" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7M-aI-6SQ" customClass="SegueButton" customModule="InterviewQuestions" customModuleProvider="target">
-                                        <rect key="frame" x="100" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="150" y="0.0" width="50" height="50"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="3MY-tC-pcV"/>
@@ -66,7 +66,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFT-FO-0Yx" userLabel="bottomCard" customClass="CardView" customModule="InterviewQuestions" customModuleProvider="target">
-                                <rect key="frame" x="40" y="51" width="240" height="426"/>
+                                <rect key="frame" x="47" y="63.5" width="281" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
@@ -79,7 +79,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lne-Nh-joS" userLabel="topCard" customClass="CardView" customModule="InterviewQuestions" customModuleProvider="target">
-                                <rect key="frame" x="40" y="71" width="240" height="426"/>
+                                <rect key="frame" x="47" y="83.5" width="281" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
@@ -96,14 +96,14 @@
                                 </connections>
                             </view>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redX" translatesAutoresizingMaskIntoConstraints="NO" id="tUV-Te-dGy">
-                                <rect key="frame" x="-160" y="234" width="100" height="100"/>
+                                <rect key="frame" x="-132.5" y="283.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="jjj-9P-pQ2"/>
                                     <constraint firstAttribute="height" constant="100" id="ot9-8e-u0Q"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenCheck" translatesAutoresizingMaskIntoConstraints="NO" id="plj-Tp-tby">
-                                <rect key="frame" x="370" y="224" width="120" height="120"/>
+                                <rect key="frame" x="397.5" y="273.5" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="MIz-t9-mHO"/>
                                     <constraint firstAttribute="height" constant="120" id="iCW-dC-dtD"/>
@@ -169,34 +169,37 @@
             <objects>
                 <viewController storyboardIdentifier="AddCardViewController" id="UZV-WM-M6M" customClass="AddCardViewController" customModule="InterviewQuestions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aKk-Yt-Sk2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD3-Qf-sEa">
-                                <rect key="frame" x="133" y="445" width="54" height="72"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="🔙"/>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="UZV-WM-M6M" eventType="touchUpInside" id="5dw-EH-1ZB"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon:  Add your own custom flashcards" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Da-mD-eeB">
-                                <rect key="frame" x="21.5" y="64.5" width="277" height="339"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="277" id="cTA-WN-deU"/>
-                                    <constraint firstAttribute="height" constant="339" id="y5Y-YG-wPb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" tag="500" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TJl-bb-vOz">
+                                <rect key="frame" x="49" y="123" width="277" height="421"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon:  Add your own custom flashcards" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Da-mD-eeB">
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="339"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="277" id="cTA-WN-deU"/>
+                                            <constraint firstAttribute="height" constant="339" id="y5Y-YG-wPb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD3-Qf-sEa">
+                                        <rect key="frame" x="111.5" y="349" width="54" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="🔙"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="UZV-WM-M6M" eventType="touchUpInside" id="5dw-EH-1ZB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Da-mD-eeB" firstAttribute="centerY" secondItem="aKk-Yt-Sk2" secondAttribute="centerY" constant="-50" id="1xb-mn-qt0"/>
-                            <constraint firstItem="WD3-Qf-sEa" firstAttribute="centerX" secondItem="aKk-Yt-Sk2" secondAttribute="centerX" id="9Or-o1-JRs"/>
-                            <constraint firstItem="WD3-Qf-sEa" firstAttribute="top" secondItem="6Da-mD-eeB" secondAttribute="bottom" constant="41.333333333333371" id="L3g-fe-HN4"/>
-                            <constraint firstItem="6Da-mD-eeB" firstAttribute="centerX" secondItem="aKk-Yt-Sk2" secondAttribute="centerX" id="oEe-C8-sLN"/>
+                            <constraint firstItem="TJl-bb-vOz" firstAttribute="centerY" secondItem="aKk-Yt-Sk2" secondAttribute="centerY" id="8Fo-33-iKr"/>
+                            <constraint firstItem="TJl-bb-vOz" firstAttribute="centerX" secondItem="aKk-Yt-Sk2" secondAttribute="centerX" id="JZ8-7a-zqA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JSC-Mb-qtF"/>
                     </view>
@@ -210,19 +213,38 @@
             <objects>
                 <viewController storyboardIdentifier="MenuViewController" id="NVP-hk-h6F" customClass="MenuViewController" customModule="InterviewQuestions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3un-GB-afE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-DA-NR6">
-                                <rect key="frame" x="170" y="318" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="NVP-hk-h6F" eventType="touchUpInside" id="IPA-Um-O2x"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" tag="500" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6KI-Yi-E6H">
+                                <rect key="frame" x="49" y="123" width="277" height="421"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon:  Additional decks of cards and statistics" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTQ-gt-IXC">
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="339"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="277" id="Bvx-ZG-z2K"/>
+                                            <constraint firstAttribute="height" constant="339" id="ty5-Dl-0Eo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-DA-NR6">
+                                        <rect key="frame" x="0.0" y="349" width="277" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="🔙"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="NVP-hk-h6F" eventType="touchUpInside" id="IPA-Um-O2x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6KI-Yi-E6H" firstAttribute="centerY" secondItem="3un-GB-afE" secondAttribute="centerY" id="W8j-hC-cL1"/>
+                            <constraint firstItem="6KI-Yi-E6H" firstAttribute="centerX" secondItem="3un-GB-afE" secondAttribute="centerX" id="kO0-Sl-iMN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6y3-oI-Ru0"/>
                     </view>
                 </viewController>

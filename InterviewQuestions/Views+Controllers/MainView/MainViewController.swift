@@ -119,12 +119,14 @@ class MainViewController: UIViewController {
       guard let cardView = recognizer.view as? CardView else { return }
       cardView.flipCard()
       
-      UIView.transition(with: cardView, duration: 1.0, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
+      let flipStyle: UIViewAnimationOptions = cardView.isFrontOfCard ? .transitionFlipFromLeft : .transitionFlipFromRight
+      UIView.transition(with: cardView, duration: 1.0, options: [flipStyle], animations: nil, completion: nil)
    }
    
    @IBAction func goToMenuVC(recognizer: UITapGestureRecognizer) {
       let button = recognizer.view as! SegueButton
       animationController.buttonFrame = view.convert(button.bounds, from: button)
+      animationController.buttonImage = button.imageView!.image
       
       let buttonGradient = button.backgroundGradientLayer
       let gradient = CAGradientLayer()
@@ -141,6 +143,7 @@ class MainViewController: UIViewController {
    @IBAction func goToAddCardVC(recognizer: UITapGestureRecognizer) {
       let button = recognizer.view as! SegueButton
       animationController.buttonFrame = view.convert(button.bounds, from: button)
+      animationController.buttonImage = button.imageView!.image
       
       let buttonGradient = button.backgroundGradientLayer
       let gradient = CAGradientLayer()
