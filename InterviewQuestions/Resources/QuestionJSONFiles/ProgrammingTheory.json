@@ -1,17 +1,64 @@
-[
- 
- {
- "category" : "Programming Theory",
- "question" : "What is pseudo-code?",
- "answer" : "Pseudo-code isn't valid computer code but instead is 'human-readable code' used to help developers sort out the steps that they'll need to do in order to make a program work. For example:",
- "answerCode" : "1) Make or reuse a cell.\n\n2) Find the item that should be displayed in the cell.\n\n3) Update the cell to display those properties.\n\n4) Return the cell."
- },
- 
- 
- {
- "category" : "Programming Theory",
- "question" : "QuestionGoesHere",
- "answer" : "AnswerGoesHere"
- }
- 
- ]
+ [
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is pseudo-code?",
+  "answer" : "Pseudo-code isn't valid computer code but instead is 'human-readable code' used to help developers sort out the steps that they'll need to do in order to make a program work. For example:",
+  "answerCode" : "1) Make or reuse a cell.\n\n2) Find the item that should be displayed in the cell.\n\n3) Update the cell to display those properties.\n\n4) Return the cell."
+  },
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is big-O notation?",
+  "answer" : "Big-O notation is used to describe how long an operation takes to complete. A few examples:\n\nO(1) describes a function that will take the same time no matter how big the data set is. \n\nO(N) describes a function that will grow linearly with how large the data set is. \n\nO(N^2) describes a function that will grow exponentially with how large the data set is."
+  },
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is the definition of syntactic sugar?",
+  "answer" : "Syntactic sugar is syntax within a programming language that is designed to make things easier to read or to express. It makes the language 'sweeter' for human use: things can be expressed more clearly, more concisely, or in an alternative style that some may prefer."
+  },
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is the difference between the stack and the heap in computer programming?",
+  "answer" : "Stack is used for static memory allocation and Heap for dynamic memory allocation, both stored in the computer's RAM . Variables allocated on the stack are stored directly to the memory and access to this memory is very fast, and it's allocation is dealt with when the program is compiled. Reference types, such as classes, reside on the heap whereas value types, such as structs, reside on the stack (unless associated with a reference type)."
+  },
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is the difference between a computer's Central Processing Unit (CPU) vs its Random Access Memory (RAM)?",
+  "answer" : "CPU is used to process data. RAM is used to temporarily save data. When a computer opens an application, data gets loaded into RAM so that the CPU can perform computations with that data. If you were to leave an application open, the CPU no longer needs to run computations but RAM would plateau until the application get shut down."
+  },
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is a high-level vs. a low-level computer language?",
+  "answer" : "The lower the level of a computer language, the more similar it is to processor instructions, machine code, or binary. This gives more ability to the programmer. The higher the level of a computer language, the more readable it is. Objective-C is a higher level than C or C++ and therefore easier to read and write but less powerful."
+  },
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is a memory leak?",
+  "answer" : "A memory leak is a type of resource leak that occurs when a computer program incorrectly manages memory allocations in such a way that memory which is no longer needed is not released. In object-oriented programming, a memory leak may happen when an object is stored in memory but cannot be accessed by the running code."
+  },
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is the difference between a run time error and a comile time error?",
+  "answer" : "A run time error is one that occurs while a project is running. A compile time error is one that can be checked at compile time and prevents a project from being able to run. In Swift, trying to access a variable that does not exist would be a compile time error whereas trying to access an object using a string identifier that does not match any known object's identifers would be a run time error."
+  },
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is the purpose of git?",
+  "answer" : "Git is a version control system, used to track changes in computer files and coordinating work among groups of developers. These changes can also be sent to a remote server that will ensure a cloud backup of these changes."
+  },
+  
+  {
+  "category" : "Programming Theory",
+  "question" : "What is Agile software development?",
+  "answer" : "Agile Software Development is an umbrella term for a set of methods and practices based on the values and principles expressed in the Agile Manifesto. Some concepts of Agile are to divide work up into 'user stories', daily meetings (often called Scrums) where individuals share their work and goals for the day, and incremental development where each successive version of the product is usable and adds to the previous functionality."
+  }
+  
+  ]

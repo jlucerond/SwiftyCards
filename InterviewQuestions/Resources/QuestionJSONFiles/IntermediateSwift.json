@@ -2,15 +2,230 @@
   
   {
   "category" : "Intermediate Swift",
-  "question" : "beginnerQuestion1",
-  "answer" : "answer1"
+  "question" : "What is the difference between using 'break', 'continue', and 'return' inside the body of a for loop or a while loop?",
+  "answer" : "Break will cause the loop to end. Continue will skip that iteration of the loop. Return (not technically part of a for loop or while loop) will stop the function from running."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What will the following function return?",
+  "questionCode" : "func foo() -> Int {\n  var value = 0\n  for num in 1...100 {\n    if num % 2 == 0 {\n      value += num\n      continue\n    } else if num % 5 == 0 {\n      break\n    }\n  }\n  return value\n  }\nfoo()",
+  "answer" : "Six. The loop will skip 1, add 2, skip 3, add 4, and break out of the loop when it gets to 5."
+  },
+
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What would the following code do?",
+  "questionCode" : "let coordinate = (x: 1, y: 5)\n\nswitch coordinate {\ncase (0, 0):\n   print('Origin')\ncase (1, _):\n   print('x equals 1')\ncase (_, 5):\n   print('y equals 5')\ndefault:\n   print('none of the above')\n}",
+  "answer" : "print: x equals 1\n\nAlthough two of the cases are true, a switch statement only performs the first case that is true."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the minimum number of values inside of a closed range? A half-open range?",
+  "answer" : "A closed range must have at least one value inside. A half-open range can have zero values inside. This may influence which one you should choose to use in a for loop.",
+  "answerCode" : "let rangeA = 1...1\nlet rangeB = 1..<1\n\nprint(rangeA.count)\n// prints 1\n\nprint(rangeB.count)\n// prints 0"
+  },
+    
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the difference between a parameter and an argument?",
+  "answer" : "A function declares its parameters in a parameter list and are used inside of the function. When you call a function, the values that are passed in are the arguments for the function’s parameters.",
+  "answerCode" : "func myFunc(parameter: String){\n}\n\nmyFunc(parameter: 'argument')"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "How do you add default values to a function’s parameters?",
+  "answer" : "By putting an equal sign after the parameter type. This will allow you to call the function with or without an argument for that parameter.",
+  "answerCode" : "func myFunc(par: Int = 5){\n   print(par)\n}\n\nmyFunc()\n// prints 5\nmyFunc(par: 7)\n// prints 7"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "How would you write the FizzBuzz function? Print numbers from 1 to 100, replacing multiples of 3 with 'Fizz', multiples of 5 with 'Buzz' and multiples of both 3 and 5 with 'FizzBuzz'?",
+  "answer" : "There’s lots of valid solutions to the problem. Here’s one:",
+  "answerCode" : "func fizzBuzz() {\n   for i in 1...100{\n      if i % 15 == 0 {\n         print('FizzBuzz')\n      } else if i % 3 == 0 {\n         print('Fizz')\n      } else if i % 5 == 0 {\n         print('Buzz')\n      } else {\n         print(i)\n      }\n   }\n}\n\nfizzBuzz()"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a recursive function and what must you be careful of when using one?",
+  "answer" : "A recursive function is a function that calls itself. However, if a function calls itself, you need to be sure that there is a way to exit the function, otherwise you will enter an infinite loop.",
+  "answerCode" : "func recursive() {\n   recursive()\n}\n// infinite loop!"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What are a few ways to unwrap optionals?",
+  "answer" : "Force unwrapping, optional binding, and guard statements.",
+  "answerCode" : "var opt: Int?\n\n// force unwrapping\nprint(opt!)\n\n// optional binding\nif let def = opt {\n   print(def)\n}\n\n// guard statement\nguard let def = opt else { return }"
   },
   
   
   {
   "category" : "Intermediate Swift",
-  "question" : "QuestionGoesHere",
-  "answer" : "AnswerGoesHere"
+  "question" : "What is the difference between looping through an array and looping through a dictionary?",
+  "answer" : "Looping through an array will give each item in the array. Looping through a dictionary will give a tuple containing the key and value of each item in the dictionary."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is subscripting and what data types support it?",
+  "answer" : "Subscripts enable you to query instances of a type by writing one or more values in square brackets after the instance name. Classes, structs, and enums can all use subscripts. The two most common uses of subscripts are with arrays and dictionaries."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What would each of the following statements return?",
+  "questionCode" : "let dict = ['a' : 1, 'b' : 2, 'c' : 3]\n\n1) dict['a']\n2) dict[1]\n3) dict.first\n4) dict.isEmpty",
+  "answer" : "1) 1\n\n2) // ERROR\n\n3) Unknown. Swift dictionaries are not guaranteed to be in any specific order. On my computer, first returned (key 'b', value 2)\n\n4) false"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a closure?",
+  "answer" : "Closures are functions without a name that can be passed as variables. Closures in Swift are similar to blocks in Objective-C."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What are the names of the four kinds of named types in Swift?",
+  "answer" : "Structures (structs), classes, enumerations (enums), and protocols."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What are the differences between structs and classes?",
+  "answer" : "Probably the most significant difference between the two is that structs are value-based and classes are reference-based. Structs also get a pre-made initializer with all  In addition, classes have the following abilities, while structs do not:\n- Inheritance enables one class to inherit the characteristics of another.\n- Type casting enables you to check and interpret the type of a class instance at runtime.\n- Deinitializers enable an instance of a class to free up any resources it has assigned.\n- Reference counting allows more than one reference to a class instance."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the problem with the following code?",
+  "questionCode" : "class Person {\n   var name: String\n   var age: Int\n}\n\nPerson(name: 'Aaron', age: 34)",
+  "answer" : "Because classes do not get pre-made initializers and the properties do not have default values, the code will not compile until an initializer gets added or Person changes from a class to a struct."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What's the difference between a function and a method in Swift? A constant/variable and a property?",
+  "answer" : "A method is a function that is inside of a type (class, struct, protocol). A property is a constant or variable that is inside of a type."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What are the advantages and disadvantages of using classes vs reference?",
+  "answer" : "There are many reasons why you want to choose one type or the other (or a combination of both), but because structs are value types, they work on the stack and have the advantages of speed and changes to one struct not affecting a copy of that struct. If you are making items that represent unique objects and want a change in one area to alter other areas in your code, you might prefer classes. (My $0.02: start with structs and change to classes when needed)"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "Which of the following would be better represented by a class? A struct?\n\n1) A person\n\n2) A person's name\n\n3) A peron's address\n\n4) A person's book",
+  "answer" : "1) Class\n\n2) Struct\n\n3) Struct\n\n4) It depends! We might say 'I have the same book as you', but unless you went 50/50 with a friend you don't technically own the same book\n\n"
+  },
+  
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What are the two kinds of properties?\n\nHint: some properties have { } after the declaration and some don't.",
+  "answer" : "Stored properties and computed properties.",
+  "answerCode" : "// stored properties\nvar birthYear = 1999\nvar year = 2018\n\n// computed property\nvar age: Int {\n   return year - birthYear\n}"
+  },
+  
+  
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a type property?",
+  "answer" : "Often called a class property or static property, these are properties that are not called on an instance of a class, but the class itself. One example is Double.pi, which is a value not associated with a specific double. It wouldn't make sense to say that 1.5 should have a property called pi, but it does make sense that pi is associated with the type Double."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What are the two types of property observers and what do they do?",
+  "answer" : "The two property observers are willSet and didSet and they allow you to run code before or after, respectively, you change a property.",
+  "answerCode" : "// stored properties\nvar favTeam: String {\n   willSet {\n      print(favTeam)\n      // prints old value\n   }\n   \n   didSet {\n      print(favTeam)\n      // prints new value\n   }\n}"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What are the two instances when self is required in front of a property or method?",
+  "answer" : "To distinguish between a local variable and a property or when inside of a closure.",
+  "answerCode" : "var name: String\n\ninit(name: String) {\n   self.name = name\n}\n\nMyClass.doThing() {\n   print(self.name)\n}"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a memberwise initializer?",
+  "answer" : "A memberwise initializer is an automatically generated initializer given by structs. Every stored property without a default value will be included.",
+  "answerCode" : "struct VideoGame {\n   let title: String\n   let rating: String = 'E'\n}\n\nVideoGame(title: 'Super Mario')"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a type method?",
+  "answer" : "Often called a class method or static method, these are methods that are about a type and not about a specific instance of a type. One group of examples would be the group of type methods in UIView that can be used to animate views.",
+  "answerCode" : "UIView.animate(withDuration: 1.0) {\n   // animate view\n}"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "Which of the following are true about extensions?\n\n1) They can be used to add functionality to classes, structs, enums, and protocols.\n2) Add new computed and stored properties.\n3) You can create new initializers in an extension.\n4) Extensions can add new nested types, such as an enum into a class",
+  "answer" : "1) true\n2) false (no to stored properties)\n3) true\n4) true"
+  },
+  
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the difference between the == and === operators?",
+  "answer" : "== checks whether two values are equal to each other. === checks whether the address in memory of two values are equal to each other.",
+  "answerCode" : "let per1 = Person(name: 'Joe')\nlet per2 = Person(name: 'Joe')\n\nper1.name == per2.name\n// true\nper1 === per2\n// false"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "Which of the following are true?\n\n1) Structs can inherit from one superstruct\n2) Structs can inherit from many superstructs\n3) Classes can inherit from one superclass\n4) Classes can inherit from many superclasses",
+  "answer" : "(3) only. Structs are not able to inherit from other structs. Classes can only inherit from one superclass, a concept known as single inheritance."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the value of 'myVar'?",
+  "questionCode" : "enum Direction {\n   case north\n   case south\n   case west\n   case east\n}\n\nlet myVar = Direction.east.hashValue",
+  "answer" : "3. If you wanted myVar to instead be the string 'east', you could change the code to:",
+  "answerCode" : "enum Direction: String {\n   case north\n   case south\n   case west\n   case east\n}\n\nlet myVar = Direction.east.rawValue"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the purpose of using enumerations (enums)?",
+  "answer" : "An enum defines a common type for a group of related values and enables you to work with those values in a type-safe way within your code. Rather than use a string in several places in your code and risk a spelling error causing a run-time error, by using an enum, you can ensure that errors get checked at compile-time."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a protocol?",
+  "answer" : "A protocol defines a contract of methods, properties, and other requirements. The protocol can then be adopted by a class, structure, or enumeration and the object that adopts the protocol then provides the actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to conform to that protocol."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "Question: Which of the following are true:\n\n1) Structs can conform to a single protocol\n2) Structs can conform to many protocols\n3) Classes can conform to a single protocol\n4) Classes can conform to many protocols\n5) Protocols can conform to a single protocol\n6) Protocols can conform to many protocols",
+  "answer" : "1) true\n2) true\n3) true\n4) true\n5) true\n6) true",
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the purpose of the Equatable protocol?",
+  "answer" : "Types that conform to the Equatable protocol can be compared for equality using the equal-to operator (==) or inequality using the not-equal-to operator (!=). Most basic types in the Swift standard library conform to Equatable."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the purpose of the Comparable protocol?",
+  "answer" : "The Comparable protocol is used for types that have an inherent order, such as numbers and strings, and allows you to use >, <, >=, and <= operators on custom types. Many types in the standard library already conform to the Comparable protocol. Because it inherits from Equatable, if you want to conform to Comparable, your custom type must also define the == operator."
   }
   
   ]

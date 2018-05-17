@@ -67,20 +67,64 @@
   "questionCode" : "1) let value = true && false\n\n2) let value = false || 3 > 1\n\n3) let value = ((10 % 2) == 0) && (false == 3 < 1)",
   "answer" : "1) FALSE\n\n2) TRUE\n\n3) TRUE"
   },
+
   
   {
   "category" : "Beginner Swift",
-  "question" : "What is the difference between using 'break', 'continue', and 'return' inside the body of a for loop or a while loop?",
-  "answer" : "Break will cause the loop to end. Continue will skip that iteration of the loop. Return (not technically part of a for loop or while loop) will stop the function from running."
+  "question" : "What is an example of a closed range? A half-open range?",
+  "answer" : "A closed range includes both the start and end value. A half-open range includes the start value and up to, but not including, the end value.",
+  "answerCode" : "let rangeA = 1...10\nlet rangeB = 11..<20\n\n// rangeA contains 10 numbers\n// rangeB contains 9 numbers"
+  },
+  
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is a wildcard symbol used for?",
+  "answer" : "A wildcard or _ is used to signify that the variable or constant that it is replacing is not needed. It is commonly used to skip the external parameter name in a function.",
+  "answerCode" : "for _ in 1...5 {\n   print('test')\n}\n// prints 'test' five times\n\nfunc noExtPar(_ num: Int) {\n}\nnoExtPar(3)"
   },
   
   {
   "category" : "Beginner Swift",
-  "question" : "What will the following function return?",
-  "questionCode" : "func foo() -> Int {\n  var value = 0\n  for num in 1...100 {\n    if num % 2 == 0 {\n      value += num\n      continue\n    } else if num % 5 == 0 {\n      break\n    }\n  }\n  return value\n  }\nfoo()",
-  "answer" : "Six. The loop will skip 1, add 2, skip 3, add 4, and break out of the loop when it gets to 5."
-  }
+  "question" : "How would you declare a function that has a parameter of an array of strings and returns an integer?",
+  "answer" : "",
+  "answerCode" : "func myFunc(array: [String]) -> Int {\n  // do something\n  // return an integer\n}"
+  },
   
+  {
+  "category" : "Beginner Swift",
+  "question" : "Where is a function’s return type declared?",
+  "answer" : "After the -> symbol. If a -> symbol is not used, then the function returns Void.",
+  "answerCode" : "func sayHi() {\n   print('Hi')\n}\n\nfunc sayHi() -> Void {\n   print('Hi')\n}"
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is the type of the constant ‘myNum’?",
+  "questionCode" : "let myNum = Int(\"1\")",
+  "answer" : "myNum is an optional Int. It is optional because Int has an initializer that takes in a string, but because the string could contain non-digits characters, it is possible that the initializer will fail."
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What’s the problem with this code?",
+  "questionCode" : "let num = [1, 2, 3, 4, 5]\n\nlet lastNum = num[5]",
+  "answer" : "Since arrays are zero-indexed, the first number in the array is at index zero and the last number in the array is at index (count - 1). Therefore the code goes beyond the last index and will crash."
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is the type of firstNum?",
+  "questionCode" : "let num = [1, 2, 3, 4, 5]\n\nlet firstNum = num.first",
+  "answer" : "Optional Int or Optional(1). The property first returns the first element in an array, but since arrays can be empty, it is wrapped in an optional."
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is the purpose of a switch statement?",
+  "answer" : "A switch statement is often a “cleaner” way to analyze multiple if/else if statements.",
+  "answerCode" : "let num = 10\n\nswitch num {\ncase 0:\n   print('zero')\ncase 1...5:\n   print('one through five')\ndefault:\n   print('negative or larger than five')\n}\n\n// would print “negative or larger than five”"
+  }
   
   ]
 

@@ -15,7 +15,7 @@ class CardModelController {
       case programmingTheory = "ProgrammingTheory"
       case beginnerSwift = "BeginnerSwift"
       case intermediateSwift = "IntermediateSwift"
-      case extraQuestions = "ExtraQuestions"
+      case advancedSwift = "AdvancedSwift"
 //      case AdvancedSwift
 //      case CoreData
 //      case Networking
@@ -75,10 +75,10 @@ class CardModelController {
          let programmingTheoryCards = loadCardsFromJSON(cardPack: .programmingTheory)
          let beginnerSwiftCards = loadCardsFromJSON(cardPack: .beginnerSwift)
          let intermediateSwiftCards = loadCardsFromJSON(cardPack: .intermediateSwift)
-         let newQ = loadCardsFromJSON(cardPack: .extraQuestions)
+         let advancedSwiftCards = loadCardsFromJSON(cardPack: .advancedSwift)
          
          // FIXME: - Set this back to 3 decks before publishing
-         return programmingTheoryCards + beginnerSwiftCards + intermediateSwiftCards + newQ
+         return programmingTheoryCards + beginnerSwiftCards + intermediateSwiftCards + advancedSwiftCards
       } else {
          print("loading things from Core Data (find)")
          do {
@@ -91,7 +91,6 @@ class CardModelController {
    }
    
    private func loadCardsFromJSON(cardPack: CardModelController.CardPack) -> [Card] {
-      print(cardPack.rawValue)
       let jsonURL = Bundle.main.url(forResource: cardPack.rawValue, withExtension: "json")!
       let jsonData = try! Data.init(contentsOf: jsonURL)
       
@@ -106,11 +105,10 @@ class CardModelController {
          let category = dictionary["category"] as! String
          
          let newCard = Card(question: question, questionCode: questionCode, answer: answer, answerCode: answerCode, category: category)
-         print("added a new card")
          arrayOfCards.append(newCard)
       }
       
-      print("added all cards!")
+      print("\(arrayOfCards.count) cards added to \(cardPack.rawValue) deck")
       return arrayOfCards
    }
    

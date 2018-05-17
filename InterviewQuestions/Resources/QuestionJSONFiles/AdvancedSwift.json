@@ -1,0 +1,139 @@
+[
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What’s the problem with this code?",
+ "questionCode" : "func addOneTo(_ value: Int) -> Int {\n   value += 1\n   return value\n}\n\naddOneTo(10)",
+ "answer" : "Parameters passed into a function are by default pass-by-value. Usually a function should not change the item that was passed in. If you do want to modify value directly, you can do copy-in copy-out, but that requires a & before the value passed in.",
+ "answerCode" : "func addOneTo(_ value: inout Int) -> Int {\n   value += 1\n   return value\n}\nvar myNum = 10\naddOneTo(&myNum)\nprint(myNum)\n// prints 11"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is overloading?",
+ "answer" : "Overloading is declaring the same function with different numbers of parameters, parameter types, or external parameter names to group similar functionality.",
+ "answerCode" : "func addOneTo(_ num: Int) -> Int {\n   return num + 1\n}\n\nfunc addOneTo(_ dec: Double) -> Double {\n   return dec + 1\n}\n\naddOneTo(3)\naddOneTo(3.5)"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What data type is an optional and how does it work?",
+ "answer" : "An optional is an enumeration with two cases: .none and .some with the .some having an associated value attached to it. Behind the scenes, an enumeration would look something like:",
+ "answerCode" : "enum myOptional {\n   case none\n   case something(item: <T>)\n} "
+ },
+ 
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "How long would each of the following functions take in terms of big-O notation?",
+ "questionCode" : "1) myArray.index(of: 2)\n2) myArray.first \n3) func fib(_ num: Int) -> Int {\n   if num == 1 || num == 2 {\n      return 1\n   } else {\n      return fib(num - 1) + fib(num - 2)\n   }\n}\n4) for num in myArray {\n   for num2 in myArray {\n      print(num * num2)\n   }\n}",
+ "answer" : "1) O(n)\n2) O(1)\n3) O(2^n)\n4) O(n^2)"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is a variadic parameter and what kind of limits are there on using them?",
+ "answer" : "A variadic parameter is used to pass a variable number of parameters into a function. There can only be one variadic parameter and it must be the final parameter in a function.",
+ "answerCode" : "func add(_ nums: Int...){\n   var sum = 0\n   for num in nums {\n      sum += num\n   }\n   print(sum)\n}\n\nadd(3, 4, 5)"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is hashable and where is it most commonly used?",
+ "answer" : "Hashable is a protocol in Swift that takes a type and provides an integer hash value. Many types in the standard library are already hashable (strings, integers, etc.). It is required of all keys in dictionaries, but is also used to distinguish items in sets."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "How could one simplify this closure?",
+ "questionCode" : "let add: (Int, Int) -> Int = { (a: Int, b: Int) -> Int in\n   return a + b\n}",
+ "answer" : "Closure syntax can be simplified by removing the parameter types, return type, and, when just a single line, the return keyword.",
+ "answerCode" : "let add: (Int, Int) -> Int = {\n   $0 + $1\n}\n\nadd(2, 3)"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is the definition of a higher-order function?",
+ "answer" : "A higher-order function is a function that takes one or more functions as arguments or returns a function as its result."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What are the four common higher-order Swift functions and what do they each do?",
+ "answer" : "Each of the following higher-order functions takes a collection and\n1) filter- returns an array containing, in order, the elements of the sequence that satisfy the given predicate.\n2) reduce- returns the result of combining the elements of the sequence using the given closure.\n3) map- Returns an array containing the results of mapping the given closure over the sequence’s elements.\n4) compactMap- Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+ },
+ 
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is the type of each of the following Swift Standard Library, Foundation, or UIKit items?\n\n1) UIImage\n2) String\n3) Array\n4) Optional\n5) Error\n6) TimeInterval",
+ "answer" : "Answers:\n\n1) Class\n2) Struct\n3) Struct\n4) Enum\n5) Protocol\n6) Type Alias"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "How does one make a computed property into a read-write computed property?",
+ "answer" : "By including both a getter and setter in the curly braces and (usually) using the newValue to set some other stored property.",
+ "answerCode" : "var birthYear = 1999\nvar year = 2018\n\nvar age: Int {\n   get {\n      return year - birthYear\n   }\n   \n   set {\n      birthYear = year - newValue\n   }\n}"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is a lazy property and when should it be used?",
+ "answer" : "A lazy property is something that is only loaded after the first time that it gets called (as opposed to when its parent gets initialized). I have three guidelines that I use to know when to create my objects lazily: the object is computationally intense, the object is frequently unused, or the object requires other properties to be set first before it can be properly created."
+ },
+ 
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is the concept of polymorphism in Swift?",
+ "answer" : "Polymorphism means that the computer will treat the project differently based on the context of where the item is used. When a class inherits from a superclass, it is able to do the functionality associated with its superclass. One example is that a UIView is able to add a subview that is of type UIView, but because a UILabel is a subclass of UIView you are able to add a UILabel without writing additional functionality."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What does the modifier 'final' mean when placed in front of a variable, class, function, class func, or subscript?",
+ "answer" : "Final prevents a subclass from overriding that class or that class's method or property. Any attempt to override a final method, property, or subscript in a subclass is reported as a compile-time error."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is the problem with the following code?",
+ "questionCode" : "class superC {\n   var name: String\n   init(name: String) {\n      self.name = name\n   }\n}\n\nclass subC: superC {\n   var str: String\n   \n   init(str: String) {\n      super.init(name: 'this')\n      self.str = str\n   }\n}",
+ "answer" : "subC's init method will show an error saying 'self.str is not initialized at super.init call'. Swift requires a two-phase initialization where all of the stored properties of a subclass are initialized before calling the super initializer."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is a designated initializer?",
+ "answer" : "Designated initializers are the primary initializers for a class. A designated initializer fully initializes all properties introduced by that class and then calls a superclass.\n\nClasses tend to have very few designated initializers, and it is quite common for a class to have only one. Designated initializers are 'funnel' points through which initialization takes place, and through which the initialization process continues up the superclass chain."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is a convenience initializer?",
+ "answer" : "Convenience initializers are optional, secondary, supporting initializers for a class. You can define a convenience initializer to call a designated initializer from the same class as the convenience initializer with some of the designated initializer’s parameters set to default values. You can also define a convenience initializer to create an instance of that class for a specific use case or input value type."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is the purpose of automatic reference counting (ARC) and what are the two most common cases where you need to be careful to not cause memory leaks?",
+ "answer" : "Swift uses ARC to track and manage your app’s memory usage. In most cases, this means that memory management 'just works' in Swift, and you do not need to think about memory management yourself. ARC automatically frees up the memory used by class instances when those instances are no longer needed.\n\nTwo very common cases where a developer needs to be cautious with memory management is when using delegates or closures, where using weak or unowned variables can help prevent memory leaks."
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "What is an enum's associated value and how would you declare it?",
+ "answer" : "An associated value allows you to create a case of an enum that has a value that provides more detail about that case.",
+ "answerCode" : "enum Response {\n   case success()\n   case error(code: Int)\n}\n\nlet er1 = Response.error(code: 404)"
+ },
+ 
+ {
+ "category" : "Advanced Swift",
+ "question" : "Within protocols, is it possible to provide a default value for a property or default functionality within a method?",
+ "answer" : "Yes, but only inside of protocol extensions.",
+ "answerCode" : "protocol myProtocol {\n   var myName: String { get }\n}\n\nextension myProtocol {\n   var myName: String {\n      return 'default'\n   }\n}"
+ }
+ 
+ 
+ ]
