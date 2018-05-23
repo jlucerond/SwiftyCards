@@ -17,12 +17,11 @@ class AddCardViewController: UIViewController {
 
       view.layer.masksToBounds = true
       view.layer.addSublayer(backgroundGradientLayer)
-      
-      // FIXME: - Hacky solution to fix width issue that shows up here
-      
+            
       backgroundGradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
       backgroundGradientLayer.masksToBounds = true
       backgroundGradientLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+      backgroundGradientLayer.zPosition = -1
     }
 
    @IBAction func backButtonPressed(_ sender: UIButton) {

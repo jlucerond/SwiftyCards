@@ -30,6 +30,20 @@
   
   {
   "category" : "Beginner Swift",
+  "question" : "What is type inference?",
+  "answer" : "Type inference allows you to initialize variables without having to declare their type. The compiler is (usually) able to determine the type of a constant or variable by what comes after the equal sign.",
+  "answerCode" : "let myInt: Int = 5\nlet myInt = 5\n// these will do the same thing"
+  },
+  
+  {
+  "category" : "Beginner Swift",
+  "question" : "What is string concatenation?",
+  "answer" : "String concatenation is the joining of strings together, done in Swift by putting a + sign between two strings.",
+  "answerCode" : "let company = 'Honda'\nlet model = 'Civic'\n\nlet car = company + ' ' + model\nprint(car)\n// prints 'Honda Civic'"
+  },
+  
+  {
+  "category" : "Beginner Swift",
   "question" : "What is a tuple?",
   "answer" : "A tuple is a type that represents data composed of multiple parts.",
   "answerCode" : "let coordinates: (Int, Int) = (x: 3, y: 5)\nlet xValue = coordinates.x\n\n\n// xValue is equal to 3."

@@ -33,6 +33,7 @@ class MainViewController: UIViewController {
    
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
+      CardModelController.shared.restartTimer()
       self.topCardYConstraint.constant = -20
    }
    

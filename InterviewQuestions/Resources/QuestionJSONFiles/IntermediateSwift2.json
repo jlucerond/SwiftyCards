@@ -1,0 +1,95 @@
+ [
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a type property?",
+  "answer" : "Often called a class property or static property, these are properties that are not called on an instance of a class, but the class itself. One example is Double.pi, which is a value not associated with a specific double. It wouldn't make sense to say that 1.5 should have a property called pi, but it does make sense that pi is associated with the type Double."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What are the two types of property observers and what do they do?",
+  "answer" : "The two property observers are willSet and didSet and they allow you to run code before or after, respectively, you change a property.",
+  "answerCode" : "// stored properties\nvar favTeam: String {\n   willSet {\n      print(favTeam)\n      // prints old value\n   }\n   \n   didSet {\n      print(favTeam)\n      // prints new value\n   }\n}"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What are the two instances when self is required in front of a property or method?",
+  "answer" : "To distinguish between a local variable and a property or when inside of a closure.",
+  "answerCode" : "var name: String\n\ninit(name: String) {\n   self.name = name\n}\n\nMyClass.doThing() {\n   print(self.name)\n}"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a memberwise initializer?",
+  "answer" : "A memberwise initializer is an automatically generated initializer given by structs. Every stored property without a default value will be included.",
+  "answerCode" : "struct VideoGame {\n   let title: String\n   let rating: String = 'E'\n}\n\nVideoGame(title: 'Super Mario')"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a type method?",
+  "answer" : "Often called a class method or static method, these are methods that are about a type and not about a specific instance of a type. One group of examples would be the group of type methods in UIView that can be used to animate views.",
+  "answerCode" : "UIView.animate(withDuration: 1.0) {\n   // animate view\n}"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "Which of the following are true about extensions?\n\n1) They can be used to add functionality to classes, structs, enums, and protocols.\n2) Add new computed and stored properties.\n3) You can create new initializers in an extension.\n4) Extensions can add new nested types, such as an enum into a class",
+  "answer" : "1) true\n2) false (no to stored properties)\n3) true\n4) true"
+  },
+  
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the difference between the == and === operators?",
+  "answer" : "== checks whether two values are equal to each other. === checks whether the address in memory of two values are equal to each other.",
+  "answerCode" : "let per1 = Person(name: 'Joe')\nlet per2 = Person(name: 'Joe')\n\nper1.name == per2.name\n// true\nper1 === per2\n// false"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "Which of the following are true?\n\n1) Structs can inherit from one superstruct\n2) Structs can inherit from many superstructs\n3) Classes can inherit from one superclass\n4) Classes can inherit from many superclasses",
+  "answer" : "(3) only. Structs are not able to inherit from other structs. Classes can only inherit from one superclass, a concept known as single inheritance."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the value of 'myVar'?",
+  "questionCode" : "enum Direction {\n   case north\n   case south\n   case west\n   case east\n}\n\nlet myVar = Direction.east.hashValue",
+  "answer" : "3. If you wanted myVar to instead be the string 'east', you could change the code to:",
+  "answerCode" : "enum Direction: String {\n   case north\n   case south\n   case west\n   case east\n}\n\nlet myVar = Direction.east.rawValue"
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the purpose of using enumerations (enums)?",
+  "answer" : "An enum defines a common type for a group of related values and enables you to work with those values in a type-safe way within your code. Rather than use a string in several places in your code and risk a spelling error causing a run-time error, by using an enum, you can ensure that errors get checked at compile-time."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is a protocol?",
+  "answer" : "A protocol defines a contract of methods, properties, and other requirements. The protocol can then be adopted by a class, structure, or enumeration and the object that adopts the protocol then provides the actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to conform to that protocol."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "Question: Which of the following are true:\n\n1) Structs can conform to a single protocol\n2) Structs can conform to many protocols\n3) Classes can conform to a single protocol\n4) Classes can conform to many protocols\n5) Protocols can conform to a single protocol\n6) Protocols can conform to many protocols",
+  "answer" : "1) true\n2) true\n3) true\n4) true\n5) true\n6) true",
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the purpose of the Equatable protocol?",
+  "answer" : "Types that conform to the Equatable protocol can be compared for equality using the equal-to operator (==) or inequality using the not-equal-to operator (!=). Most basic types in the Swift standard library conform to Equatable."
+  },
+  
+  {
+  "category" : "Intermediate Swift",
+  "question" : "What is the purpose of the Comparable protocol?",
+  "answer" : "The Comparable protocol is used for types that have an inherent order, such as numbers and strings, and allows you to use >, <, >=, and <= operators on custom types. Many types in the standard library already conform to the Comparable protocol. Because it inherits from Equatable, if you want to conform to Comparable, your custom type must also define the == operator."
+  }
+  
+  ]

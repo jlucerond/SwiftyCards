@@ -12,12 +12,15 @@
 		D85544C420A7C5F400E451AD /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85544C320A7C5F400E451AD /* AddCardViewController.swift */; };
 		D85544C820A7F08C00E451AD /* SegueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85544C720A7F08C00E451AD /* SegueButton.swift */; };
 		D8590C6820ACA18300692A89 /* AdvancedSwift.json in Resources */ = {isa = PBXBuildFile; fileRef = D8590C6720ACA18200692A89 /* AdvancedSwift.json */; };
+		D86500EB20AE2F83004A0C48 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86500EA20AE2F83004A0C48 /* StatView.swift */; };
+		D86A6C3520B476D800F31363 /* QuestionPackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A6C3420B476D800F31363 /* QuestionPackCollectionViewCell.swift */; };
 		D86ED91B2098D71C0096E332 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86ED91A2098D71C0096E332 /* AppDelegate.swift */; };
 		D86ED91D2098D71C0096E332 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86ED91C2098D71C0096E332 /* MainViewController.swift */; };
 		D86ED9202098D71C0096E332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86ED91E2098D71C0096E332 /* Main.storyboard */; };
 		D86ED9222098D71D0096E332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86ED9212098D71D0096E332 /* Assets.xcassets */; };
 		D86ED9252098D71D0096E332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86ED9232098D71D0096E332 /* LaunchScreen.storyboard */; };
 		D86ED92E2098D8320096E332 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86ED92D2098D8320096E332 /* CardView.swift */; };
+		D8C288EF20B4BAA800F28269 /* IntermediateSwift2.json in Resources */ = {isa = PBXBuildFile; fileRef = D8C288EE20B4BAA800F28269 /* IntermediateSwift2.json */; };
 		D8CFA62220A356EF00A455E8 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFA62120A356EF00A455E8 /* CodeView.swift */; };
 		D8D2E730209F916000722B0B /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8D2E72E209F916000722B0B /* CardModel.xcdatamodeld */; };
 		D8D2E732209F916800722B0B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2E731209F916800722B0B /* CoreDataStack.swift */; };
@@ -34,6 +37,8 @@
 		D85544C320A7C5F400E451AD /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		D85544C720A7F08C00E451AD /* SegueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueButton.swift; sourceTree = "<group>"; };
 		D8590C6720ACA18200692A89 /* AdvancedSwift.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdvancedSwift.json; sourceTree = "<group>"; };
+		D86500EA20AE2F83004A0C48 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		D86A6C3420B476D800F31363 /* QuestionPackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPackCollectionViewCell.swift; sourceTree = "<group>"; };
 		D86ED9172098D71C0096E332 /* InterviewQuestions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewQuestions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86ED91A2098D71C0096E332 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D86ED91C2098D71C0096E332 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		D86ED9242098D71D0096E332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D86ED9262098D71D0096E332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86ED92D2098D8320096E332 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D8C288EE20B4BAA800F28269 /* IntermediateSwift2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IntermediateSwift2.json; sourceTree = "<group>"; };
 		D8CFA62120A356EF00A455E8 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		D8D2E72F209F916000722B0B /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
 		D8D2E731209F916800722B0B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -78,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				D85544C120A7C5E800E451AD /* MenuViewController.swift */,
+				D86500EA20AE2F83004A0C48 /* StatView.swift */,
+				D86A6C3420B476D800F31363 /* QuestionPackCollectionViewCell.swift */,
 			);
 			path = MenuView;
 			sourceTree = "<group>";
@@ -165,6 +173,7 @@
 				D8FA993020A2BA8800203639 /* ProgrammingTheory.json */,
 				D8D2E739209F9ECD00722B0B /* BeginnerSwift.json */,
 				D8FA992D20A2B1EE00203639 /* IntermediateSwift.json */,
+				D8C288EE20B4BAA800F28269 /* IntermediateSwift2.json */,
 				D8590C6720ACA18200692A89 /* AdvancedSwift.json */,
 			);
 			path = QuestionJSONFiles;
@@ -229,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D2E73A209F9ECD00722B0B /* BeginnerSwift.json in Resources */,
+				D8C288EF20B4BAA800F28269 /* IntermediateSwift2.json in Resources */,
 				D8FA992E20A2B1EE00203639 /* IntermediateSwift.json in Resources */,
 				D86ED9252098D71D0096E332 /* LaunchScreen.storyboard in Resources */,
 				D86ED9222098D71D0096E332 /* Assets.xcassets in Resources */,
@@ -250,11 +260,13 @@
 				D8D2E734209F947100722B0B /* CardModel+Convenience.swift in Sources */,
 				D86ED91D2098D71C0096E332 /* MainViewController.swift in Sources */,
 				D8D2E730209F916000722B0B /* CardModel.xcdatamodeld in Sources */,
+				D86500EB20AE2F83004A0C48 /* StatView.swift in Sources */,
 				D8D2E736209F961600722B0B /* CardModelController.swift in Sources */,
 				D85544C420A7C5F400E451AD /* AddCardViewController.swift in Sources */,
 				D86ED92E2098D8320096E332 /* CardView.swift in Sources */,
 				D85544BD20A7C07200E451AD /* AnimationController.swift in Sources */,
 				D85544C820A7F08C00E451AD /* SegueButton.swift in Sources */,
+				D86A6C3520B476D800F31363 /* QuestionPackCollectionViewCell.swift in Sources */,
 				D86ED91B2098D71C0096E332 /* AppDelegate.swift in Sources */,
 				D8CFA62220A356EF00A455E8 /* CodeView.swift in Sources */,
 			);

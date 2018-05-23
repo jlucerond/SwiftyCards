@@ -103,7 +103,7 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
                         let scaleY = (self.buttonFrame.height / detailView.frame.height)
 
                         detailView.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
-                        
+
                         buttonImageView.frame = CGRect(x: 0, y: 0, width: detailView.bounds.width, height: detailView.bounds.height)
 
                         detailView.viewWithTag(500)?.alpha = 0

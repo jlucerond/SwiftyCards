@@ -102,7 +102,7 @@ class CardView: UIView {
    
    
    private func configure() {
-      topLayerGradient.colors = [topGradientColor.cgColor, bottomGradientColor.cgColor]
+      topLayerGradient.colors = [card.topGradientColor.cgColor, card.bottomGradientColor.cgColor]
       
       topicLabel.text = card.category
       questionLabel.text = card.question
@@ -161,36 +161,6 @@ class CardView: UIView {
    
 }
 
-private extension CardView {
-   var topGradientColor: UIColor {
-      switch card.category {
-      case "Programming Theory":
-         return #colorLiteral(red: 0.5810584426, green: 0.1285524964, blue: 0.5745313764, alpha: 1)
-      case "Beginner Swift":
-         return #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
-      case "Intermediate Swift":
-         return #colorLiteral(red: 0.4620226622, green: 0.8382837176, blue: 1, alpha: 1)
-      case "Advanced Swift":
-         return #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)
-      default:
-         return startColor
-      }
-   }
-   
-   var bottomGradientColor: UIColor {
-      switch card.category {
-      case "Programming Theory":
-         return #colorLiteral(red: 0.5808190107, green: 0.0884276256, blue: 0.3186392188, alpha: 1)
-      case "Beginner Swift":
-         return #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)
-      case "Intermediate Swift":
-         return #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
-      case "Advanced Swift":
-         return #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
-      default:
-         return endColor
-      }
-   }
-}
+
 
 
