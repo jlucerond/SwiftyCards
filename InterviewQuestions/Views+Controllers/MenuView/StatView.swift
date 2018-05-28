@@ -15,26 +15,14 @@ class StatView: UIView {
    let captionLabel = UILabel()
    
    var range: CGFloat = 10
-   var curValue: CGFloat = 5 {
-      didSet {
-         animate()
-      }
-   }
+   var curValue: CGFloat = 5
    let margin: CGFloat = 10
    
    let bgLayer = CAShapeLayer()
-   @IBInspectable var bgColor: UIColor = UIColor.gray {
-      didSet {
-         configure()
-      }
-   }
+   @IBInspectable var bgColor: UIColor = UIColor.gray
    
    let fgLayer = CAShapeLayer()
-   @IBInspectable var fgColor: UIColor = UIColor.black {
-      didSet {
-         configure()
-      }
-   }
+   @IBInspectable var fgColor: UIColor = UIColor.black
    
    override func awakeFromNib() {
       super.awakeFromNib()
@@ -44,25 +32,24 @@ class StatView: UIView {
       curValue = CGFloat(CardModelController.shared.usersCurrentScore)
       
       setup()
-      configure()
-      animate()
    }
    
    override func prepareForInterfaceBuilder() {
       super.prepareForInterfaceBuilder()
+      
       setup()
-      configure()
-      animate()
    }
    
    func setup() {
       // Setup background layer
+      bgLayer.strokeColor = bgColor.cgColor
       bgLayer.fillColor = nil
       bgLayer.lineWidth = 40.0
       bgLayer.strokeEnd = 1.0
       layer.addSublayer(bgLayer)
       
       // Setup foreground layer
+      fgLayer.strokeColor = fgColor.cgColor
       fgLayer.fillColor = nil
       fgLayer.lineWidth = 40.0
       fgLayer.strokeEnd = 0
@@ -95,15 +82,11 @@ class StatView: UIView {
       NSLayoutConstraint.activate([captionLabelCenterX, captionLabelBottom])
    }
    
-   func configure() {
-      bgLayer.strokeColor = bgColor.cgColor
-      fgLayer.strokeColor = fgColor.cgColor
-   }
-   
    override func layoutSubviews() {
       super.layoutSubviews()
       setUp(shapeLayer: bgLayer)
       setUp(shapeLayer: fgLayer)
+      showPercentComplete()
    }
    
    private func setUp(shapeLayer: CAShapeLayer) {
@@ -116,7 +99,7 @@ class StatView: UIView {
       shapeLayer.path = path.cgPath
    }
    
-   private func animate() {
+   private func showPercentComplete() {
       let percentComplete = curValue/range
       fgLayer.strokeEnd = percentComplete
       percentLabel.text = String(format: "%d%%", Int(100 * percentComplete))

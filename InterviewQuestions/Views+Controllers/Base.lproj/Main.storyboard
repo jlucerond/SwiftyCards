@@ -214,7 +214,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" tag="500" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fqH-m4-b1w">
+                            <stackView opaque="NO" tag="500" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fqH-m4-b1w">
                                 <rect key="frame" x="20" y="40" width="280" height="420"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C48-Qf-1u0">
@@ -236,10 +236,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4VZ-Sx-aNI">
-                                                            <rect key="frame" x="422.5" y="468" width="155.5" height="64.5"/>
+                                                            <rect key="frame" x="-78" y="-32.5" width="156" height="65"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Question Pack)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D0N-2w-q90">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="155.5" height="27.5"/>
+                                                                    <rect key="frame" x="0.0" y="-0.5" width="156" height="27.5"/>
                                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -271,7 +271,7 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHP-hK-tFZ" customClass="StatView" customModule="InterviewQuestions" customModuleProvider="target">
-                                        <rect key="frame" x="35" y="132" width="210" height="210"/>
+                                        <rect key="frame" x="0.0" y="132" width="280" height="210"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
                                                 <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="0.30175125838926176" colorSpace="custom" customColorSpace="sRGB"/>
