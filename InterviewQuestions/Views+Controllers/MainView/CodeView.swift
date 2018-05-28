@@ -29,7 +29,7 @@ class CodeView: UIView {
       super.init(frame: .zero)
       setUp()
    }
-   
+
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
    }
@@ -38,6 +38,7 @@ class CodeView: UIView {
    override func awakeFromNib() {
       super.awakeFromNib()
       setUp()
+      layoutIfNeeded()
    }
    
    override func prepareForInterfaceBuilder() {

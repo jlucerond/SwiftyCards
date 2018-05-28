@@ -41,6 +41,7 @@ class CardView: UIView {
    
    override func prepareForInterfaceBuilder() {
       super.prepareForInterfaceBuilder()
+      questionCodeView.prepareForInterfaceBuilder()
       setUp()
       configureWithFakeDataForStoryboard()
       layoutSubviews()

@@ -20,6 +20,7 @@
 		D86ED9222098D71D0096E332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86ED9212098D71D0096E332 /* Assets.xcassets */; };
 		D86ED9252098D71D0096E332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86ED9232098D71D0096E332 /* LaunchScreen.storyboard */; };
 		D86ED92E2098D8320096E332 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86ED92D2098D8320096E332 /* CardView.swift */; };
+		D8874BD220B8B37000E489D8 /* ContentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8874BD120B8B37000E489D8 /* ContentInputView.swift */; };
 		D8C288EF20B4BAA800F28269 /* IntermediateSwift2.json in Resources */ = {isa = PBXBuildFile; fileRef = D8C288EE20B4BAA800F28269 /* IntermediateSwift2.json */; };
 		D8CFA62220A356EF00A455E8 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFA62120A356EF00A455E8 /* CodeView.swift */; };
 		D8D2E730209F916000722B0B /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8D2E72E209F916000722B0B /* CardModel.xcdatamodeld */; };
@@ -47,6 +48,7 @@
 		D86ED9242098D71D0096E332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D86ED9262098D71D0096E332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86ED92D2098D8320096E332 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D8874BD120B8B37000E489D8 /* ContentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentInputView.swift; sourceTree = "<group>"; };
 		D8C288EE20B4BAA800F28269 /* IntermediateSwift2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IntermediateSwift2.json; sourceTree = "<group>"; };
 		D8CFA62120A356EF00A455E8 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		D8D2E72F209F916000722B0B /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D85544C320A7C5F400E451AD /* AddCardViewController.swift */,
+				D8874BD120B8B37000E489D8 /* ContentInputView.swift */,
 			);
 			path = AddCardView;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				D8D2E732209F916800722B0B /* CoreDataStack.swift in Sources */,
 				D85544C220A7C5E800E451AD /* MenuViewController.swift in Sources */,
 				D8D2E734209F947100722B0B /* CardModel+Convenience.swift in Sources */,
+				D8874BD220B8B37000E489D8 /* ContentInputView.swift in Sources */,
 				D86ED91D2098D71C0096E332 /* MainViewController.swift in Sources */,
 				D8D2E730209F916000722B0B /* CardModel.xcdatamodeld in Sources */,
 				D86500EB20AE2F83004A0C48 /* StatView.swift in Sources */,
@@ -422,7 +426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevelopr.SwiftCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -440,7 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevelopr.SwiftCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
