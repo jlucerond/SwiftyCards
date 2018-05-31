@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,14 +16,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="InterviewQuestions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="wZ2-Jk-GfW">
-                                <rect key="frame" x="60" y="420" width="200" height="60"/>
+                                <rect key="frame" x="60" y="497" width="200" height="71"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1U-3b-tK6" customClass="SegueButton" customModule="InterviewQuestions" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="5" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="10.5" width="50" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7M-aI-6SQ" customClass="SegueButton" customModule="InterviewQuestions" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="5" width="50" height="50"/>
+                                        <rect key="frame" x="150" y="10.5" width="50" height="50"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="3MY-tC-pcV"/>
@@ -66,12 +66,12 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFT-FO-0Yx" userLabel="bottomCard" customClass="CardView" customModule="InterviewQuestions" customModuleProvider="target">
-                                <rect key="frame" x="24" y="40" width="272" height="360"/>
+                                <rect key="frame" x="24" y="51" width="272" height="426"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lne-Nh-joS" userLabel="topCard" customClass="CardView" customModule="InterviewQuestions" customModuleProvider="target">
-                                <rect key="frame" x="24" y="60" width="272" height="360"/>
+                                <rect key="frame" x="24" y="71" width="272" height="426"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -80,14 +80,14 @@
                                 </connections>
                             </view>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redX" translatesAutoresizingMaskIntoConstraints="NO" id="tUV-Te-dGy">
-                                <rect key="frame" x="-160" y="190" width="100" height="100"/>
+                                <rect key="frame" x="-160" y="234" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="jjj-9P-pQ2"/>
                                     <constraint firstAttribute="height" constant="100" id="ot9-8e-u0Q"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenCheck" translatesAutoresizingMaskIntoConstraints="NO" id="plj-Tp-tby">
-                                <rect key="frame" x="370" y="180" width="120" height="120"/>
+                                <rect key="frame" x="370" y="224" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="MIz-t9-mHO"/>
                                     <constraint firstAttribute="height" constant="120" id="iCW-dC-dtD"/>
@@ -154,75 +154,137 @@
             <objects>
                 <viewController storyboardIdentifier="AddCardViewController" id="UZV-WM-M6M" customClass="AddCardViewController" customModule="InterviewQuestions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aKk-Yt-Sk2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" tag="500" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TJl-bb-vOz">
-                                <rect key="frame" x="20" y="40" width="280" height="420"/>
+                            <stackView opaque="NO" tag="500" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tl0-DZ-aWk">
+                                <rect key="frame" x="10" y="30" width="300" height="528"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbb-32-nXg" customClass="ContentInputView" customModule="InterviewQuestions" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="347"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbb-32-nXg" userLabel="CategoryView" customClass="ContentInputView" customModule="InterviewQuestions" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="55.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="topic" value="Category"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="margin">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="Here goes the category"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="topic" value="Category:"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfK-rj-vPY">
-                                        <rect key="frame" x="0.0" y="357" width="280" height="63"/>
-                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        <state key="normal" title="🔙">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backButtonPressed:" destination="NVP-hk-h6F" eventType="touchUpInside" id="1cm-pM-uh1"/>
-                                            <action selector="backButtonPressed:" destination="UZV-WM-M6M" eventType="touchUpInside" id="LUR-5J-yQr"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MT-0e-Htr" userLabel="QuestionView" customClass="ContentInputView" customModule="InterviewQuestions" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="70.5" width="300" height="55.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="topic" value="Question:"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K47-B5-Jcc" userLabel="QuestionCodeView" customClass="ContentInputView" customModule="InterviewQuestions" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="141" width="300" height="55.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="topic" value="Question Code:"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textViewColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textViewTextColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYo-6C-FKS" userLabel="AnswerView" customClass="ContentInputView" customModule="InterviewQuestions" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="211.5" width="300" height="55.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="topic" value="Answer:"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="247" verticalHuggingPriority="247" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="vF9-Of-8yW" userLabel="AnswerCodeView" customClass="ContentInputView" customModule="InterviewQuestions" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="282" width="300" height="55.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="topic" value="Answer Code:"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textViewColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textViewTextColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="db0-L3-Bjg" userLabel="BlankSpace">
+                                        <rect key="frame" x="0.0" y="352.5" width="300" height="104"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ec0-B8-MDJ">
+                                        <rect key="frame" x="0.0" y="471.5" width="300" height="56.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfK-rj-vPY">
+                                                <rect key="frame" x="0.0" y="0.0" width="145" height="56.5"/>
+                                                <color key="backgroundColor" red="1" green="0.1822328691" blue="0.1664781085" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="❌">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="UZV-WM-M6M" eventType="touchUpInside" id="3cl-36-TWj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czV-gH-rat">
+                                                <rect key="frame" x="155" y="0.0" width="145" height="56.5"/>
+                                                <color key="backgroundColor" red="0.011764705882352941" green="0.73333333333333328" blue="0.066666666666666666" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="✅">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="saveButtonPressed:" destination="UZV-WM-M6M" eventType="touchUpInside" id="oxK-Kn-dr3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="VfK-rj-vPY" firstAttribute="height" secondItem="Ec0-B8-MDJ" secondAttribute="height" multiplier="0.15" constant="48.100000000000001" id="CR4-rO-IEN"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="VfK-rj-vPY" firstAttribute="height" secondItem="TJl-bb-vOz" secondAttribute="height" multiplier="0.15" id="6E7-l8-alk"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TJl-bb-vOz" firstAttribute="leading" secondItem="JSC-Mb-qtF" secondAttribute="leading" constant="20" id="2cM-Ng-eXu"/>
-                            <constraint firstItem="TJl-bb-vOz" firstAttribute="top" secondItem="JSC-Mb-qtF" secondAttribute="top" constant="20" id="LL3-Tj-UKo"/>
-                            <constraint firstItem="JSC-Mb-qtF" firstAttribute="bottom" secondItem="TJl-bb-vOz" secondAttribute="bottom" constant="20" id="cFq-1g-f9T"/>
-                            <constraint firstItem="JSC-Mb-qtF" firstAttribute="trailing" secondItem="TJl-bb-vOz" secondAttribute="trailing" constant="20" id="jBL-KC-bMi"/>
+                            <constraint firstAttribute="bottom" secondItem="tl0-DZ-aWk" secondAttribute="bottom" constant="10" id="9af-fz-bfc"/>
+                            <constraint firstItem="tl0-DZ-aWk" firstAttribute="leading" secondItem="JSC-Mb-qtF" secondAttribute="leading" constant="10" id="cuh-hp-jr0"/>
+                            <constraint firstItem="tl0-DZ-aWk" firstAttribute="top" secondItem="JSC-Mb-qtF" secondAttribute="top" constant="10" id="oIs-mx-VcJ"/>
+                            <constraint firstItem="JSC-Mb-qtF" firstAttribute="trailing" secondItem="tl0-DZ-aWk" secondAttribute="trailing" constant="10" id="vkt-QE-hYK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JSC-Mb-qtF"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="VfK-rj-vPY" id="O71-ee-S1C"/>
+                        <outlet property="answerCIV" destination="sYo-6C-FKS" id="4wJ-3q-FSv"/>
+                        <outlet property="answerCodeCIV" destination="vF9-Of-8yW" id="xuQ-4x-WWT"/>
+                        <outlet property="categoryCIV" destination="jbb-32-nXg" id="emg-G3-dhS"/>
+                        <outlet property="greenCheckButton" destination="czV-gH-rat" id="yAO-nj-5OG"/>
+                        <outlet property="questionCIV" destination="3MT-0e-Htr" id="EGU-MC-04S"/>
+                        <outlet property="questionCodeCIV" destination="K47-B5-Jcc" id="LI0-Kd-cMG"/>
+                        <outlet property="redXButton" destination="VfK-rj-vPY" id="EVM-lI-nEL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whv-NE-8Sc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498.75" y="752.5"/>
+            <point key="canvasLocation" x="227" y="753"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="PI7-Ic-oyt">
             <objects>
                 <viewController storyboardIdentifier="MenuViewController" id="NVP-hk-h6F" customClass="MenuViewController" customModule="InterviewQuestions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3un-GB-afE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" tag="500" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fqH-m4-b1w">
-                                <rect key="frame" x="20" y="40" width="280" height="420"/>
+                                <rect key="frame" x="10" y="30" width="300" height="528"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C48-Qf-1u0">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="117"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="166"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="740" constant="100" id="8F2-hQ-Kkd"/>
                                         </constraints>
+                                        <inset key="scrollIndicatorInsets" minX="-10" minY="0.0" maxX="-10" maxY="0.0"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i6z-6c-7De">
                                             <size key="itemSize" width="0.0" height="0.0"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -271,7 +333,7 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHP-hK-tFZ" customClass="StatView" customModule="InterviewQuestions" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="132" width="280" height="210"/>
+                                        <rect key="frame" x="0.0" y="181" width="300" height="264"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
                                                 <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="0.30175125838926176" colorSpace="custom" customColorSpace="sRGB"/>
@@ -282,9 +344,9 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-DA-NR6">
-                                        <rect key="frame" x="0.0" y="357" width="280" height="63"/>
+                                        <rect key="frame" x="0.0" y="460" width="300" height="68"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="🔙">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -295,9 +357,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="C48-Qf-1u0" firstAttribute="top" secondItem="fqH-m4-b1w" secondAttribute="top" id="CLp-Hl-RwL"/>
-                                    <constraint firstItem="pbI-DA-NR6" firstAttribute="width" secondItem="fqH-m4-b1w" secondAttribute="width" id="hie-I5-66t"/>
                                     <constraint firstItem="C48-Qf-1u0" firstAttribute="width" secondItem="fqH-m4-b1w" secondAttribute="width" id="irY-jF-KcY"/>
-                                    <constraint firstItem="pbI-DA-NR6" firstAttribute="height" secondItem="fqH-m4-b1w" secondAttribute="height" multiplier="0.15" id="jGB-Hf-ZzL"/>
                                     <constraint firstItem="C48-Qf-1u0" firstAttribute="leading" secondItem="fqH-m4-b1w" secondAttribute="leading" id="oIs-AH-Ndc"/>
                                     <constraint firstAttribute="trailing" secondItem="C48-Qf-1u0" secondAttribute="trailing" id="woY-ae-0lL"/>
                                     <constraint firstItem="jHP-hK-tFZ" firstAttribute="height" secondItem="fqH-m4-b1w" secondAttribute="height" multiplier="0.5" id="zcb-Qs-dGr"/>
@@ -306,10 +366,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fqH-m4-b1w" firstAttribute="top" secondItem="6y3-oI-Ru0" secondAttribute="top" constant="20" id="2qc-uo-liL"/>
-                            <constraint firstItem="6y3-oI-Ru0" firstAttribute="trailing" secondItem="fqH-m4-b1w" secondAttribute="trailing" constant="20" id="N2H-Mp-FZz"/>
-                            <constraint firstItem="6y3-oI-Ru0" firstAttribute="bottom" secondItem="fqH-m4-b1w" secondAttribute="bottom" constant="20" id="wRi-MQ-2eb"/>
-                            <constraint firstItem="fqH-m4-b1w" firstAttribute="leading" secondItem="6y3-oI-Ru0" secondAttribute="leading" constant="20" id="zRY-it-bJf"/>
+                            <constraint firstItem="fqH-m4-b1w" firstAttribute="top" secondItem="6y3-oI-Ru0" secondAttribute="top" constant="10" id="2qc-uo-liL"/>
+                            <constraint firstItem="6y3-oI-Ru0" firstAttribute="trailing" secondItem="fqH-m4-b1w" secondAttribute="trailing" constant="10" id="N2H-Mp-FZz"/>
+                            <constraint firstItem="6y3-oI-Ru0" firstAttribute="bottom" secondItem="fqH-m4-b1w" secondAttribute="bottom" constant="10" id="wRi-MQ-2eb"/>
+                            <constraint firstItem="fqH-m4-b1w" firstAttribute="leading" secondItem="6y3-oI-Ru0" secondAttribute="leading" constant="10" id="zRY-it-bJf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6y3-oI-Ru0"/>
                     </view>

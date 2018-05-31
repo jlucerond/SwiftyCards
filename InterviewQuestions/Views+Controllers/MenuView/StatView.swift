@@ -59,7 +59,6 @@ class StatView: UIView {
       percentLabel.font = UIFont.systemFont(ofSize: 50)
       percentLabel.textColor = UIColor.black
       percentLabel.text = "0/0"
-      percentLabel.translatesAutoresizingMaskIntoConstraints = false
       addSubview(percentLabel)
       
       // Setup caption label
@@ -68,15 +67,15 @@ class StatView: UIView {
       captionLabel.minimumScaleFactor = 0.1
       captionLabel.text = "Percent Complete"
       captionLabel.textColor = UIColor.black
-      captionLabel.translatesAutoresizingMaskIntoConstraints = false
       addSubview(captionLabel)
-
       
       // Setup constraints
+      percentLabel.translatesAutoresizingMaskIntoConstraints = false
       let percentLabelCenterX = percentLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
       let percentLabelCenterY = percentLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
       NSLayoutConstraint.activate([percentLabelCenterX, percentLabelCenterY])
       
+      captionLabel.translatesAutoresizingMaskIntoConstraints = false
       let captionLabelCenterX = captionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
       let captionLabelBottom = captionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -margin)
       NSLayoutConstraint.activate([captionLabelCenterX, captionLabelBottom])

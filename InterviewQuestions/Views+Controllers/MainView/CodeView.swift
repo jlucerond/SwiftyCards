@@ -56,7 +56,6 @@ class CodeView: UIView {
       self.clipsToBounds = true
       
       // FIXME: - Can I move this one line down into layout subviews (keep constraints together)
-      codeTextLabel.translatesAutoresizingMaskIntoConstraints = false
       codeTextLabel.backgroundColor = customBackgroundColor
       codeTextLabel.textColor = customCodeColor
       codeTextLabel.numberOfLines = 0
@@ -65,6 +64,7 @@ class CodeView: UIView {
       codeTextLabel.minimumScaleFactor = 0.1
       codeTextLabel.text = "test\n\nquestion"
       
+      codeTextLabel.translatesAutoresizingMaskIntoConstraints = false
       codeTextLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: spacingConstant).isActive = true
       codeTextLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: spacingConstant).isActive = true
       codeTextLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -spacingConstant).isActive = true

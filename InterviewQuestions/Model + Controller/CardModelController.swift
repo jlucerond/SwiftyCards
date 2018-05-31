@@ -51,6 +51,12 @@ class CardModelController {
       }
    }
    
+   func createNewCard(question: String, questionCode: String, answer: String, answerCode: String, category: String) {
+      let newCard = Card(question: question, questionCode: questionCode, answer: answer, answerCode: answerCode, category: category, cardPack: "Custom")
+      
+      try! newCard.managedObjectContext?.save()
+   }
+   
    func restartTimer() {
       timePassed = 0
    }

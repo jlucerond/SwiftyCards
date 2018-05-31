@@ -11,48 +11,106 @@ import UIKit
 @IBDesignable
 class ContentInputView: UIView {
 
-   @IBInspectable var topic: String = "topic" {
-      didSet {
-         setUp()
-      }
-   }
+   @IBInspectable var topic: String = ""
+   @IBInspectable var value: String = ""
+   @IBInspectable var margin: CGFloat = 5
+   @IBInspectable var textViewColor: UIColor = UIColor.white
+   @IBInspectable var textViewTextColor: UIColor = UIColor.black
    
-   @IBInspectable var value: String = "value" {
-      didSet {
-         setUp()
-      }
-   }
-   @IBInspectable var margin: CGFloat = 5 {
-      didSet {
-         setUp()
-      }
-   }
+   private let titleLabel = UILabel()
+   private let textView = UITextView()
    
-   private let title = UILabel()
-   private let textField = UITextField()
+   var userInput: String? {
+      return textView.text
+   }
    
    override func prepareForInterfaceBuilder() {
       super.prepareForInterfaceBuilder()
+      invalidateIntrinsicContentSize()
       setUp()
-      layoutSubviews()
+   }
+   
+   override func awakeFromNib() {
+      super.awakeFromNib()
+      invalidateIntrinsicContentSize()
+      setUp()
    }
 
    func setUp() {
-      title.text = topic
-      addSubview(title)
+      titleLabel.text = topic
+      textView.text = value
+      addSubview(titleLabel)
       
-//      textField.text = value
-//      addSubview(textField)
+      textView.backgroundColor = textViewColor
+      textView.textColor = textViewTextColor
+      textView.layer.borderColor = (textViewColor == UIColor.black) ? UIColor.white.cgColor : UIColor.black.cgColor
+      textView.layer.borderWidth = 2.0
+      textView.isScrollEnabled = false
+      textView.addClearAndDoneButtons()
+      addSubview(textView)
       
       addConstraints()
    }
+   
+//   @objc func something() {
+//      textField.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//      textField.inpu
+//   }
 
    func addConstraints() {
-      title.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-      title.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+      titleLabel.translatesAutoresizingMaskIntoConstraints = false
+      titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+      titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
       
-//      textField.topAnchor.constraint(equalTo: title.bottomAnchor, constant: margin).isActive = true
-//      textField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: margin).isActive = true
+      textView.translatesAutoresizingMaskIntoConstraints = false
+      textView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: margin).isActive = true
+      textView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: margin).isActive = true
+      textView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -margin).isActive = true
+      
+      let textViewBottomConstraint = textView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+      textViewBottomConstraint.priority = UILayoutPriority(rawValue: 300)
+      textViewBottomConstraint.isActive = true
+      
+//      textField.readableContentGuide
+      
+//      let height = title.frame.height + textView.frame.height + margin
+//      self.heightAnchor.constraint(greaterThanOrEqualToConstant: height).isActive = true
    }
    
+   override var intrinsicContentSize: CGSize {
+      let intrinsicHeight = titleLabel.intrinsicContentSize.height + margin + textView.intrinsicContentSize.height
+      print(intrinsicHeight)
+      return CGSize(width: 100, height: intrinsicHeight)
+   }
+   
+
+   
 }
+
+extension UITextView {
+   
+   func addClearAndDoneButtons() {
+      let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+      doneToolbar.barStyle = .default
+      
+      let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+      let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+      let clear: UIBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(self.clearButtonAction))
+      
+      let items = [clear, flexSpace, done]
+      doneToolbar.items = items
+      doneToolbar.sizeToFit()
+      
+      self.inputAccessoryView = doneToolbar
+   }
+   
+   @objc func doneButtonAction() {
+      self.resignFirstResponder()
+   }
+   
+   @objc func clearButtonAction() {
+      self.text = ""
+   }
+
+}
+

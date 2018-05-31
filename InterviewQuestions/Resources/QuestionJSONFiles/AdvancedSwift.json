@@ -60,7 +60,7 @@
  {
  "category" : "Advanced Swift",
  "question" : "What are the four common higher-order Swift functions and what do they each do?",
- "answer" : "Each of the following higher-order functions takes a collection and\n1) filter- returns an array containing, in order, the elements of the sequence that satisfy the given predicate.\n2) reduce- returns the result of combining the elements of the sequence using the given closure.\n3) map- Returns an array containing the results of mapping the given closure over the sequence’s elements.\n4) compactMap- Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+ "answer" : "Each of the following higher-order functions takes a collection and\n\n1) filter- returns an array containing, in order, the elements of the sequence that satisfy the given predicate.\n2) reduce- returns the result of combining the elements of the sequence using the given closure.\n3) map- returns an array containing the results of mapping the given closure over the sequence’s elements.\n4) compactMap- returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
  },
  
  
