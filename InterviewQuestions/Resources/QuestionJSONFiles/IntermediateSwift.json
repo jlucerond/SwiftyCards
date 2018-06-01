@@ -116,7 +116,7 @@
   
   {
   "category" : "Intermediate Swift",
-  "question" : "What are the advantages and disadvantages of using classes vs reference?",
+  "question" : "What are the advantages and disadvantages of using classes vs structs?",
   "answer" : "There are many reasons why you want to choose one type or the other (or a combination of both), but because structs are value types, they work on the stack and have the advantages of speed and changes to one struct not affecting a copy of that struct. If you are making items that represent unique objects and want a change in one area to alter other areas in your code, you might prefer classes. (My $0.02: start with structs and change to classes when needed)"
   },
   
