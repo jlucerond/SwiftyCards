@@ -79,6 +79,12 @@ class CardModelController {
       timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (_) in
          self.timePassed += 1
       })
+      
+      DispatchQueue.global(qos: .default).async {
+         self.fixBadCards()
+         self.save()
+      }
+      
    }
    
    private func save() {
@@ -152,6 +158,15 @@ class CardModelController {
          card.totalPoints += 2
       } else {
          card.totalPoints += 1
+      }
+   }
+   
+   private func fixBadCards() {
+      for card in cards {
+         if card.question == "What are the advantages and disadvantages of using classes vs reference?" {
+            card.question = "What are the advantages and disadvantages of using classes vs structs?"
+            print("fixed the class vs reference card")
+         }
       }
    }
 }

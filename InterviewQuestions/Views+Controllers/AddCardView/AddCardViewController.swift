@@ -54,7 +54,7 @@ class AddCardViewController: UIViewController {
    }
    
    private func showError() {
-      let alert = UIAlertController(title: "Oops", message: "It looks like you forgot to add some things. Make sure you include both a category and a question", preferredStyle: .alert)
+      let alert = UIAlertController(title: "Oops", message: "It looks like you forgot to add something. Make sure that you include both a category and a question.", preferredStyle: .alert)
       
       let okAction = UIAlertAction(title: "Got it", style: .default, handler: nil)
       alert.addAction(okAction)
